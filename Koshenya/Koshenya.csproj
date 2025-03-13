@@ -1,0 +1,392 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D97312B3-7F87-42FD-B486-8DFD3FBF7FC6}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Koshenya</RootNamespace>
+    <AssemblyName>Koshenya</AssemblyName>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>
+    </DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Koshenya.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>Koshenya.Program</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=9.0.0.3, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.9.0.3\lib\net462\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.IO.Pipelines, Version=9.0.0.3, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.Pipelines.9.0.3\lib\net462\System.IO.Pipelines.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Memory, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.5\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Encodings.Web, Version=9.0.0.3, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Encodings.Web.9.0.3\lib\net462\System.Text.Encodings.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Json, Version=9.0.0.3, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Json.9.0.3\lib\net462\System.Text.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net461\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Core\Animation.cs" />
+    <Compile Include="Core\AnimationClip.cs" />
+    <Compile Include="Core\AnimationPlayer.cs" />
+    <Compile Include="Core\Characters\Cat\CatAssets.cs" />
+    <Compile Include="Core\Characters\Cat\Cat.cs" />
+    <Compile Include="Core\Characters\Character.cs" />
+    <Compile Include="Core\Characters\CharacterBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Core\Characters\CharacterBox.Designer.cs">
+      <DependentUpon>CharacterBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Core\Characters\Cat\CatBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Core\Extensions\ListExtensions.cs" />
+    <Compile Include="Core\Characters\ICharacterAssets.cs" />
+    <Compile Include="Core\Characters\ICharacterBox.cs" />
+    <Compile Include="Core\Movement.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Core\Characters\CharacterBox.resx">
+      <DependentUpon>CharacterBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\Cat\Animations\Brown\blink\1.png" />
+    <Content Include="Assets\Cat\Animations\Brown\blink\2.png" />
+    <Content Include="Assets\Cat\Animations\Brown\blink\3.png" />
+    <Content Include="Assets\Cat\Animations\Brown\blink\4.png" />
+    <Content Include="Assets\Cat\Animations\Brown\blink\5.png" />
+    <Content Include="Assets\Cat\Animations\Brown\dragging-sleep\1.png" />
+    <Content Include="Assets\Cat\Animations\Brown\dragging-sleep\2.png" />
+    <Content Include="Assets\Cat\Animations\Brown\dragging-sleep\3.png" />
+    <Content Include="Assets\Cat\Animations\Brown\dragging-sleep\4.png" />
+    <Content Include="Assets\Cat\Animations\Brown\dragging\1.png" />
+    <Content Include="Assets\Cat\Animations\Brown\hisses\1.png" />
+    <Content Include="Assets\Cat\Animations\Brown\hisses\2.png" />
+    <Content Include="Assets\Cat\Animations\Brown\hisses\3.png" />
+    <Content Include="Assets\Cat\Animations\Brown\hisses\4.png" />
+    <Content Include="Assets\Cat\Animations\Brown\hisses\5.png" />
+    <Content Include="Assets\Cat\Animations\Brown\hisses\6.png" />
+    <Content Include="Assets\Cat\Animations\Brown\hisses\7.png" />
+    <Content Include="Assets\Cat\Animations\Brown\hisses\8.png" />
+    <Content Include="Assets\Cat\Animations\Brown\hisses\9.png" />
+    <Content Include="Assets\Cat\Animations\Brown\idle\1.png" />
+    <Content Include="Assets\Cat\Animations\Brown\laydown\1.png" />
+    <Content Include="Assets\Cat\Animations\Brown\laydown\2.png" />
+    <Content Include="Assets\Cat\Animations\Brown\laydown\3.png" />
+    <Content Include="Assets\Cat\Animations\Brown\laydown\4.png" />
+    <Content Include="Assets\Cat\Animations\Brown\laydown\5.png" />
+    <Content Include="Assets\Cat\Animations\Brown\laydown\6.png" />
+    <Content Include="Assets\Cat\Animations\Brown\laydown\7.png" />
+    <Content Include="Assets\Cat\Animations\Brown\laydown\8.png" />
+    <Content Include="Assets\Cat\Animations\Brown\laydown\9.png" />
+    <Content Include="Assets\Cat\Animations\Brown\look-around\1.png" />
+    <Content Include="Assets\Cat\Animations\Brown\look-around\2.png" />
+    <Content Include="Assets\Cat\Animations\Brown\look-around\3.png" />
+    <Content Include="Assets\Cat\Animations\Brown\look-around\4.png" />
+    <Content Include="Assets\Cat\Animations\Brown\look-around\5.png" />
+    <Content Include="Assets\Cat\Animations\Brown\look-around\6.png" />
+    <Content Include="Assets\Cat\Animations\Brown\look-around\7.png" />
+    <Content Include="Assets\Cat\Animations\Brown\look-around\8.png" />
+    <Content Include="Assets\Cat\Animations\Brown\meow\1.png" />
+    <Content Include="Assets\Cat\Animations\Brown\meow\2.png" />
+    <Content Include="Assets\Cat\Animations\Brown\meow\3.png" />
+    <Content Include="Assets\Cat\Animations\Brown\meow\4.png" />
+    <Content Include="Assets\Cat\Animations\Brown\meow\5.png" />
+    <Content Include="Assets\Cat\Animations\Brown\run\nw\1.png" />
+    <Content Include="Assets\Cat\Animations\Brown\run\nw\2.png" />
+    <Content Include="Assets\Cat\Animations\Brown\run\nw\3.png" />
+    <Content Include="Assets\Cat\Animations\Brown\run\nw\4.png" />
+    <Content Include="Assets\Cat\Animations\Brown\run\nw\5.png" />
+    <Content Include="Assets\Cat\Animations\Brown\run\nw\6.png" />
+    <Content Include="Assets\Cat\Animations\Brown\run\nw\7.png" />
+    <Content Include="Assets\Cat\Animations\Brown\run\nw\8.png" />
+    <Content Include="Assets\Cat\Animations\Brown\run\n\1.png" />
+    <Content Include="Assets\Cat\Animations\Brown\run\n\2.png" />
+    <Content Include="Assets\Cat\Animations\Brown\run\n\3.png" />
+    <Content Include="Assets\Cat\Animations\Brown\run\n\4.png" />
+    <Content Include="Assets\Cat\Animations\Brown\run\n\5.png" />
+    <Content Include="Assets\Cat\Animations\Brown\run\n\6.png" />
+    <Content Include="Assets\Cat\Animations\Brown\run\n\7.png" />
+    <Content Include="Assets\Cat\Animations\Brown\run\n\8.png" />
+    <Content Include="Assets\Cat\Animations\Brown\run\sw\1.png" />
+    <Content Include="Assets\Cat\Animations\Brown\run\sw\2.png" />
+    <Content Include="Assets\Cat\Animations\Brown\run\sw\3.png" />
+    <Content Include="Assets\Cat\Animations\Brown\run\sw\4.png" />
+    <Content Include="Assets\Cat\Animations\Brown\run\sw\5.png" />
+    <Content Include="Assets\Cat\Animations\Brown\run\sw\6.png" />
+    <Content Include="Assets\Cat\Animations\Brown\run\sw\7.png" />
+    <Content Include="Assets\Cat\Animations\Brown\run\sw\8.png" />
+    <Content Include="Assets\Cat\Animations\Brown\run\s\1.png" />
+    <Content Include="Assets\Cat\Animations\Brown\run\s\2.png" />
+    <Content Include="Assets\Cat\Animations\Brown\run\s\3.png" />
+    <Content Include="Assets\Cat\Animations\Brown\run\s\4.png" />
+    <Content Include="Assets\Cat\Animations\Brown\run\s\5.png" />
+    <Content Include="Assets\Cat\Animations\Brown\run\s\6.png" />
+    <Content Include="Assets\Cat\Animations\Brown\run\s\7.png" />
+    <Content Include="Assets\Cat\Animations\Brown\run\s\8.png" />
+    <Content Include="Assets\Cat\Animations\Brown\run\w\1.png" />
+    <Content Include="Assets\Cat\Animations\Brown\run\w\2.png" />
+    <Content Include="Assets\Cat\Animations\Brown\run\w\3.png" />
+    <Content Include="Assets\Cat\Animations\Brown\run\w\4.png" />
+    <Content Include="Assets\Cat\Animations\Brown\run\w\5.png" />
+    <Content Include="Assets\Cat\Animations\Brown\run\w\6.png" />
+    <Content Include="Assets\Cat\Animations\Brown\run\w\7.png" />
+    <Content Include="Assets\Cat\Animations\Brown\run\w\8.png" />
+    <Content Include="Assets\Cat\Animations\Brown\sleep\1.png" />
+    <Content Include="Assets\Cat\Animations\Brown\sleep\2.png" />
+    <Content Include="Assets\Cat\Animations\Brown\sleep\3.png" />
+    <Content Include="Assets\Cat\Animations\Brown\sleep\4.png" />
+    <Content Include="Assets\Cat\Animations\Brown\walk\nw\1.png" />
+    <Content Include="Assets\Cat\Animations\Brown\walk\nw\2.png" />
+    <Content Include="Assets\Cat\Animations\Brown\walk\nw\3.png" />
+    <Content Include="Assets\Cat\Animations\Brown\walk\nw\4.png" />
+    <Content Include="Assets\Cat\Animations\Brown\walk\n\1.png" />
+    <Content Include="Assets\Cat\Animations\Brown\walk\n\2.png" />
+    <Content Include="Assets\Cat\Animations\Brown\walk\n\3.png" />
+    <Content Include="Assets\Cat\Animations\Brown\walk\n\4.png" />
+    <Content Include="Assets\Cat\Animations\Brown\walk\sw\1.png" />
+    <Content Include="Assets\Cat\Animations\Brown\walk\sw\2.png" />
+    <Content Include="Assets\Cat\Animations\Brown\walk\sw\3.png" />
+    <Content Include="Assets\Cat\Animations\Brown\walk\sw\4.png" />
+    <Content Include="Assets\Cat\Animations\Brown\walk\s\1.png" />
+    <Content Include="Assets\Cat\Animations\Brown\walk\s\2.png" />
+    <Content Include="Assets\Cat\Animations\Brown\walk\s\3.png" />
+    <Content Include="Assets\Cat\Animations\Brown\walk\s\4.png" />
+    <Content Include="Assets\Cat\Animations\Brown\walk\w\1.png" />
+    <Content Include="Assets\Cat\Animations\Brown\walk\w\2.png" />
+    <Content Include="Assets\Cat\Animations\Brown\walk\w\3.png" />
+    <Content Include="Assets\Cat\Animations\Brown\walk\w\4.png" />
+    <Content Include="Assets\Cat\Animations\brown_palette.bmp" />
+    <Content Include="Assets\Cat\Animations\Grey\blink\1.png" />
+    <Content Include="Assets\Cat\Animations\Grey\blink\2.png" />
+    <Content Include="Assets\Cat\Animations\Grey\blink\3.png" />
+    <Content Include="Assets\Cat\Animations\Grey\blink\4.png" />
+    <Content Include="Assets\Cat\Animations\Grey\blink\5.png" />
+    <Content Include="Assets\Cat\Animations\Grey\dragging-sleep\1.png" />
+    <Content Include="Assets\Cat\Animations\Grey\dragging-sleep\2.png" />
+    <Content Include="Assets\Cat\Animations\Grey\dragging-sleep\3.png" />
+    <Content Include="Assets\Cat\Animations\Grey\dragging-sleep\4.png" />
+    <Content Include="Assets\Cat\Animations\Grey\dragging\1.png" />
+    <Content Include="Assets\Cat\Animations\Grey\hisses\1.png" />
+    <Content Include="Assets\Cat\Animations\Grey\hisses\2.png" />
+    <Content Include="Assets\Cat\Animations\Grey\hisses\3.png" />
+    <Content Include="Assets\Cat\Animations\Grey\hisses\4.png" />
+    <Content Include="Assets\Cat\Animations\Grey\hisses\5.png" />
+    <Content Include="Assets\Cat\Animations\Grey\hisses\6.png" />
+    <Content Include="Assets\Cat\Animations\Grey\hisses\7.png" />
+    <Content Include="Assets\Cat\Animations\Grey\hisses\8.png" />
+    <Content Include="Assets\Cat\Animations\Grey\hisses\9.png" />
+    <Content Include="Assets\Cat\Animations\Grey\idle\1.png" />
+    <Content Include="Assets\Cat\Animations\Grey\laydown\1.png" />
+    <Content Include="Assets\Cat\Animations\Grey\laydown\2.png" />
+    <Content Include="Assets\Cat\Animations\Grey\laydown\3.png" />
+    <Content Include="Assets\Cat\Animations\Grey\laydown\4.png" />
+    <Content Include="Assets\Cat\Animations\Grey\laydown\5.png" />
+    <Content Include="Assets\Cat\Animations\Grey\laydown\6.png" />
+    <Content Include="Assets\Cat\Animations\Grey\laydown\7.png" />
+    <Content Include="Assets\Cat\Animations\Grey\laydown\8.png" />
+    <Content Include="Assets\Cat\Animations\Grey\laydown\9.png" />
+    <Content Include="Assets\Cat\Animations\Grey\look-around\1.png" />
+    <Content Include="Assets\Cat\Animations\Grey\look-around\2.png" />
+    <Content Include="Assets\Cat\Animations\Grey\look-around\3.png" />
+    <Content Include="Assets\Cat\Animations\Grey\look-around\4.png" />
+    <Content Include="Assets\Cat\Animations\Grey\look-around\5.png" />
+    <Content Include="Assets\Cat\Animations\Grey\look-around\6.png" />
+    <Content Include="Assets\Cat\Animations\Grey\look-around\7.png" />
+    <Content Include="Assets\Cat\Animations\Grey\look-around\8.png" />
+    <Content Include="Assets\Cat\Animations\Grey\meow\1.png" />
+    <Content Include="Assets\Cat\Animations\Grey\meow\2.png" />
+    <Content Include="Assets\Cat\Animations\Grey\meow\3.png" />
+    <Content Include="Assets\Cat\Animations\Grey\meow\4.png" />
+    <Content Include="Assets\Cat\Animations\Grey\meow\5.png" />
+    <Content Include="Assets\Cat\Animations\Grey\run\nw\1.png" />
+    <Content Include="Assets\Cat\Animations\Grey\run\nw\2.png" />
+    <Content Include="Assets\Cat\Animations\Grey\run\nw\3.png" />
+    <Content Include="Assets\Cat\Animations\Grey\run\nw\4.png" />
+    <Content Include="Assets\Cat\Animations\Grey\run\nw\5.png" />
+    <Content Include="Assets\Cat\Animations\Grey\run\nw\6.png" />
+    <Content Include="Assets\Cat\Animations\Grey\run\nw\7.png" />
+    <Content Include="Assets\Cat\Animations\Grey\run\nw\8.png" />
+    <Content Include="Assets\Cat\Animations\Grey\run\n\1.png" />
+    <Content Include="Assets\Cat\Animations\Grey\run\n\2.png" />
+    <Content Include="Assets\Cat\Animations\Grey\run\n\3.png" />
+    <Content Include="Assets\Cat\Animations\Grey\run\n\4.png" />
+    <Content Include="Assets\Cat\Animations\Grey\run\n\5.png" />
+    <Content Include="Assets\Cat\Animations\Grey\run\n\6.png" />
+    <Content Include="Assets\Cat\Animations\Grey\run\n\7.png" />
+    <Content Include="Assets\Cat\Animations\Grey\run\n\8.png" />
+    <Content Include="Assets\Cat\Animations\Grey\run\sw\1.png" />
+    <Content Include="Assets\Cat\Animations\Grey\run\sw\2.png" />
+    <Content Include="Assets\Cat\Animations\Grey\run\sw\3.png" />
+    <Content Include="Assets\Cat\Animations\Grey\run\sw\4.png" />
+    <Content Include="Assets\Cat\Animations\Grey\run\sw\5.png" />
+    <Content Include="Assets\Cat\Animations\Grey\run\sw\6.png" />
+    <Content Include="Assets\Cat\Animations\Grey\run\sw\7.png" />
+    <Content Include="Assets\Cat\Animations\Grey\run\sw\8.png" />
+    <Content Include="Assets\Cat\Animations\Grey\run\s\1.png" />
+    <Content Include="Assets\Cat\Animations\Grey\run\s\2.png" />
+    <Content Include="Assets\Cat\Animations\Grey\run\s\3.png" />
+    <Content Include="Assets\Cat\Animations\Grey\run\s\4.png" />
+    <Content Include="Assets\Cat\Animations\Grey\run\s\5.png" />
+    <Content Include="Assets\Cat\Animations\Grey\run\s\6.png" />
+    <Content Include="Assets\Cat\Animations\Grey\run\s\7.png" />
+    <Content Include="Assets\Cat\Animations\Grey\run\s\8.png" />
+    <Content Include="Assets\Cat\Animations\Grey\run\w\1.png" />
+    <Content Include="Assets\Cat\Animations\Grey\run\w\2.png" />
+    <Content Include="Assets\Cat\Animations\Grey\run\w\3.png" />
+    <Content Include="Assets\Cat\Animations\Grey\run\w\4.png" />
+    <Content Include="Assets\Cat\Animations\Grey\run\w\5.png" />
+    <Content Include="Assets\Cat\Animations\Grey\run\w\6.png" />
+    <Content Include="Assets\Cat\Animations\Grey\run\w\7.png" />
+    <Content Include="Assets\Cat\Animations\Grey\run\w\8.png" />
+    <Content Include="Assets\Cat\Animations\Grey\sleep\1.png" />
+    <Content Include="Assets\Cat\Animations\Grey\sleep\2.png" />
+    <Content Include="Assets\Cat\Animations\Grey\sleep\3.png" />
+    <Content Include="Assets\Cat\Animations\Grey\sleep\4.png" />
+    <Content Include="Assets\Cat\Animations\Grey\walk\nw\1.png" />
+    <Content Include="Assets\Cat\Animations\Grey\walk\nw\2.png" />
+    <Content Include="Assets\Cat\Animations\Grey\walk\nw\3.png" />
+    <Content Include="Assets\Cat\Animations\Grey\walk\nw\4.png" />
+    <Content Include="Assets\Cat\Animations\Grey\walk\n\1.png" />
+    <Content Include="Assets\Cat\Animations\Grey\walk\n\2.png" />
+    <Content Include="Assets\Cat\Animations\Grey\walk\n\3.png" />
+    <Content Include="Assets\Cat\Animations\Grey\walk\n\4.png" />
+    <Content Include="Assets\Cat\Animations\Grey\walk\sw\1.png" />
+    <Content Include="Assets\Cat\Animations\Grey\walk\sw\2.png" />
+    <Content Include="Assets\Cat\Animations\Grey\walk\sw\3.png" />
+    <Content Include="Assets\Cat\Animations\Grey\walk\sw\4.png" />
+    <Content Include="Assets\Cat\Animations\Grey\walk\s\1.png" />
+    <Content Include="Assets\Cat\Animations\Grey\walk\s\2.png" />
+    <Content Include="Assets\Cat\Animations\Grey\walk\s\3.png" />
+    <Content Include="Assets\Cat\Animations\Grey\walk\s\4.png" />
+    <Content Include="Assets\Cat\Animations\Grey\walk\w\1.png" />
+    <Content Include="Assets\Cat\Animations\Grey\walk\w\2.png" />
+    <Content Include="Assets\Cat\Animations\Grey\walk\w\3.png" />
+    <Content Include="Assets\Cat\Animations\Grey\walk\w\4.png" />
+    <Content Include="Assets\Cat\Animations\grey_palette.bmp" />
+    <Content Include="Assets\Cat\Animations\original_spite-sheet.png" />
+    <Content Include="Assets\Cat\Sounds\hisses.wav" />
+    <Content Include="Assets\Cat\Sounds\meow.wav" />
+    <Content Include="Assets\Cat\Sounds\purring.wav" />
+    <Content Include="Koshenya.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.6.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.6.2 %28x86 и x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
