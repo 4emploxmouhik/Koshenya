@@ -1,13 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Media;
+using System.Diagnostics;
 using System.Windows.Forms;
 
 namespace Koshenya.Core
 {
     internal class AnimationPlayer
     {
-        private readonly ICharacterBox _box;
+        private readonly IBox _box;
         private readonly Timer _timer;
 
         private Animation _animation;
@@ -18,7 +17,7 @@ namespace Koshenya.Core
         private int _clipAnimIndx = 0;
         private bool _isClipPlayed;
 
-        public AnimationPlayer(ICharacterBox box)
+        public AnimationPlayer(IBox box)
         {
             _box = box;
             _timer = new Timer();
@@ -72,29 +71,43 @@ namespace Koshenya.Core
 
         private void OnTick(object sender, EventArgs e)
         {
-            if (_animation == null) return;
-
-            if (_isClipPlayed)
+            try
             {
-                _animation = GetClipAnimation();
-                _clipFrameIndx++;
-            }
+                if (_isClipPlayed)
+                {
+                    _animation = GetClipAnimation();
+                    _clipFrameIndx++;
+                }
 
-            if (_frameIndx == _animation.Frames.Length)
+                if (_frameIndx == _animation.Frames.Length)
+                {
+                    OnAnimationEnded();
+                    _frameIndx = 0;
+                }
+
+                if (_frameIndx == 0)
+                    OnAnimationStarted();
+
+                _timer.Interval = _animation.FrameLength;
+                _box.Frame = _animation.Frames[_frameIndx++];
+            }
+            catch (NullReferenceException)
             {
-                OnAnimationEnded();
-                _frameIndx = 0;
+                // if _animation is null
+                // or
+                // when changing current animation object (AnimationClip to Animation), _clip is null
+#if DEBUG
+                Debug.WriteLine("AnimationPlayer.OnTick() catch NullReferenceException, all fine.");
+#endif
+                return;
             }
-
-            if (_frameIndx == 0)
-                OnAnimationStarted();
-
-            _timer.Interval = _animation.FrameLength;
-            _box.Frame = _animation.Frames[_frameIndx++];
         }
 
         private Animation GetClipAnimation()
         {
+            if (_clip.PlaybackQueue.Count == 0)
+                return _clip.Default;
+
             if (_clipFrameIndx == _clip.PlaybackQueue[_clipAnimIndx].EndFrame)
             {
                 OnAnimationEnded();

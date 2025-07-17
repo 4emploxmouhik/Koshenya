@@ -3,11 +3,6 @@
 ##
 ## Get latest from https://github.com/github/gitignore/blob/master/VisualStudio.gitignore
 
-# Other user files
-*.drawio
-*.drawio.bkp
-Koshenya.Tools/
-
 # User-specific files
 *.rsuser
 *.suo

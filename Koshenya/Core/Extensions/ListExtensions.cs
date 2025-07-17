@@ -14,9 +14,7 @@ namespace Koshenya.Core.Extensions
             Animation[] result = new Animation[names.Length];
 
             for (int i = 0; i < names.Length; i++)
-            {
                 result[i] = list.Get(names[i]);
-            }
 
             return result;
         }

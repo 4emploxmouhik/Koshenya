@@ -7,19 +7,22 @@ namespace Koshenya.Core
 {
     internal class Movement
     {
-        private readonly ICharacterBox _box;
+        private readonly IMovementBox _box;
         private readonly Timer _timer;
 
         private readonly int _triggerBounds;
+        private readonly int _runFactor;
+
         private Point _target;
         private int _speed;
 
-        public Movement(ICharacterBox box)
+        public Movement(IMovementBox box)
         {
             _box = box;
             _timer = new Timer();
             _timer.Tick += Timer_Tick;
             _triggerBounds = _box.Size.Width / 4;
+            _runFactor = 10;
         }
 
         public event EventHandler<Directions> DirectionChanged;
@@ -27,11 +30,21 @@ namespace Koshenya.Core
 
         public enum Directions
         {
-            None, East, West, North, South, NorthEast, NorthWest, SouthEast, SouthWest
+            None = -1, 
+            North = 0, 
+            NorthWest = 1, 
+            West = 2, 
+            SouthWest = 3,
+            South = 4,
+            SouthEast = 5, 
+            East = 6, 
+            NorthEast = 7,
         }
         public enum Speeds
         {
-            Idle, Walk, Run
+            None = -1, 
+            Walk = 0, 
+            Run = 1
         }
         public Directions Direction { get; protected set; }
         public Speeds Speed { get; protected set; }
@@ -164,12 +177,20 @@ namespace Koshenya.Core
             if (distance < _triggerBounds)
             {
                 _speed = 0;
-                OnSpeedChange(Speeds.Idle);
+                OnSpeedChange(Speeds.None);
             }
-            else if (_triggerBounds < distance && distance < _triggerBounds * 10)
+            else if (_triggerBounds < distance && distance < _triggerBounds * _runFactor)
             {
-                _speed = WalkSpeed;
-                OnSpeedChange(Speeds.Walk);
+                if (WalkSpeed == 0)
+                {
+                    _speed = RunSpeed;
+                    OnSpeedChange(Speeds.Run);
+                }
+                else
+                {
+                    _speed = WalkSpeed;
+                    OnSpeedChange(Speeds.Walk);
+                }
             }
             else
             {

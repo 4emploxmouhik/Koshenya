@@ -8,11 +8,12 @@
     <OutputType>WinExe</OutputType>
     <RootNamespace>Koshenya</RootNamespace>
     <AssemblyName>Koshenya</AssemblyName>
-    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
     <TargetFrameworkProfile />
+    <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -25,7 +26,6 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -37,7 +37,7 @@
     <OutputPath>bin\Debug\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
+    <WarningLevel>3</WarningLevel>
     <DocumentationFile>
     </DocumentationFile>
   </PropertyGroup>
@@ -63,41 +63,10 @@
     <SignAssembly>false</SignAssembly>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=9.0.0.3, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.9.0.3\lib\net462\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
-    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
-    </Reference>
     <Reference Include="System.Core" />
-    <Reference Include="System.IO.Pipelines, Version=9.0.0.3, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.IO.Pipelines.9.0.3\lib\net462\System.IO.Pipelines.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Memory, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Memory.4.5.5\lib\net461\System.Memory.dll</HintPath>
-    </Reference>
     <Reference Include="System.Numerics" />
-    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Text.Encodings.Web, Version=9.0.0.3, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Text.Encodings.Web.9.0.3\lib\net462\System.Text.Encodings.Web.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Text.Json, Version=9.0.0.3, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Text.Json.9.0.3\lib\net462\System.Text.Json.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
-    </Reference>
-    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net461\System.ValueTuple.dll</HintPath>
-    </Reference>
     <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
@@ -110,26 +79,125 @@
     <Compile Include="Core\Animation.cs" />
     <Compile Include="Core\AnimationClip.cs" />
     <Compile Include="Core\AnimationPlayer.cs" />
-    <Compile Include="Core\Characters\Cat\CatAssets.cs" />
-    <Compile Include="Core\Characters\Cat\Cat.cs" />
-    <Compile Include="Core\Characters\Character.cs" />
-    <Compile Include="Core\Characters\CharacterBox.cs">
+    <Compile Include="Core\Character.cs" />
+    <Compile Include="Core\CharacterConfiguration.cs" />
+    <Compile Include="Core\CharacterStateType.cs" />
+    <Compile Include="Core\Exceptions\BadFrameFileNameException.cs" />
+    <Compile Include="Core\Extensions\CharacterExtensions.cs" />
+    <Compile Include="Forms\CharacterBox.DefaultCharacterInitialization.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Core\Characters\CharacterBox.Designer.cs">
+    <Compile Include="Forms\Controls\AnimationsListViewUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Controls\AnimationsListViewUC.Designer.cs">
+      <DependentUpon>AnimationsListViewUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Controls\StateParametersUC\DragStateParametersUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Controls\StateParametersUC\DragStateParametersUC.Designer.cs">
+      <DependentUpon>DragStateParametersUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Controls\StateParametersUC\IdleStateParametersUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Controls\StateParametersUC\IdleStateParametersUC.Designer.cs">
+      <DependentUpon>IdleStateParametersUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Controls\StateParametersUC\IStateParametersUC.cs" />
+    <Compile Include="Forms\Controls\StateParametersUC\MovementStateParametersUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Controls\StateParametersUC\MovementStateParametersUC.Designer.cs">
+      <DependentUpon>MovementStateParametersUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Controls\StateParametersUC\PucnhStateParametersUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Controls\StateParametersUC\PucnhStateParametersUC.Designer.cs">
+      <DependentUpon>PucnhStateParametersUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Controls\StateParametersUC\SleepStateParametersUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Controls\StateParametersUC\SleepStateParametersUC.Designer.cs">
+      <DependentUpon>SleepStateParametersUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Controls\SoundsListViewUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Controls\SoundsListViewUC.Designer.cs">
+      <DependentUpon>SoundsListViewUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CharacterConfigurationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CharacterConfigurationForm.Designer.cs">
+      <DependentUpon>CharacterConfigurationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CharacterStatesManagerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CharacterStatesManagerForm.Designer.cs">
+      <DependentUpon>CharacterStatesManagerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ExceptionInfoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ExceptionInfoForm.Designer.cs">
+      <DependentUpon>ExceptionInfoForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Core\States\Parameters\Paramenters.cs" />
+    <Compile Include="Core\States\SleepingState.cs" />
+    <Compile Include="Core\States\DragState.cs" />
+    <Compile Include="Forms\CharacterBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CharacterBox.Designer.cs">
       <DependentUpon>CharacterBox.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Core\Characters\Cat\CatBox.cs">
-      <SubType>Form</SubType>
     </Compile>
     <Compile Include="Core\Extensions\ListExtensions.cs" />
-    <Compile Include="Core\Characters\ICharacterAssets.cs" />
-    <Compile Include="Core\Characters\ICharacterBox.cs" />
+    <Compile Include="Core\ICharacterBox.cs" />
     <Compile Include="Core\Movement.cs" />
+    <Compile Include="Core\CharacterState.cs" />
+    <Compile Include="Core\States\IdleState.cs" />
+    <Compile Include="Core\States\MovementState.cs" />
+    <Compile Include="Core\States\PunchState.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Core\Characters\CharacterBox.resx">
+    <EmbeddedResource Include="Forms\Controls\AnimationsListViewUC.resx">
+      <DependentUpon>AnimationsListViewUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Controls\StateParametersUC\DragStateParametersUC.resx">
+      <DependentUpon>DragStateParametersUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Controls\StateParametersUC\IdleStateParametersUC.resx">
+      <DependentUpon>IdleStateParametersUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Controls\StateParametersUC\MovementStateParametersUC.resx">
+      <DependentUpon>MovementStateParametersUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Controls\StateParametersUC\PucnhStateParametersUC.resx">
+      <DependentUpon>PucnhStateParametersUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Controls\StateParametersUC\SleepStateParametersUC.resx">
+      <DependentUpon>SleepStateParametersUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Controls\SoundsListViewUC.resx">
+      <DependentUpon>SoundsListViewUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CharacterConfigurationForm.resx">
+      <DependentUpon>CharacterConfigurationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CharacterBox.resx">
       <DependentUpon>CharacterBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CharacterStatesManagerForm.resx">
+      <DependentUpon>CharacterStatesManagerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ExceptionInfoForm.resx">
+      <DependentUpon>ExceptionInfoForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -141,7 +209,10 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <None Include="packages.config" />
+    <None Include="Assets\Cat\Cats Download.zip" />
+    <None Include="Assets\Fox\Fox_Idle.rar" />
+    <None Include="Assets\Fox\Fox_Walk.rar" />
+    <None Include="CoreClassDiagram.cd" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -371,15 +442,272 @@
     <Content Include="Assets\Cat\Animations\Grey\walk\w\4.png" />
     <Content Include="Assets\Cat\Animations\grey_palette.bmp" />
     <Content Include="Assets\Cat\Animations\original_spite-sheet.png" />
+    <Content Include="Assets\Cat\Reference\black_0.png" />
+    <Content Include="Assets\Cat\Reference\black_1.png" />
+    <Content Include="Assets\Cat\Reference\black_2.png" />
+    <Content Include="Assets\Cat\Reference\black_3.png" />
+    <Content Include="Assets\Cat\Reference\black_4.png" />
+    <Content Include="Assets\Cat\Reference\blue_0.png" />
+    <Content Include="Assets\Cat\Reference\blue_1.png" />
+    <Content Include="Assets\Cat\Reference\blue_2.png" />
+    <Content Include="Assets\Cat\Reference\blue_3.png" />
+    <Content Include="Assets\Cat\Reference\brown_0.png" />
+    <Content Include="Assets\Cat\Reference\brown_1.png" />
+    <Content Include="Assets\Cat\Reference\brown_2.png" />
+    <Content Include="Assets\Cat\Reference\brown_3.png" />
+    <Content Include="Assets\Cat\Reference\brown_4.png" />
+    <Content Include="Assets\Cat\Reference\brown_5.png" />
+    <Content Include="Assets\Cat\Reference\brown_6.png" />
+    <Content Include="Assets\Cat\Reference\brown_7.png" />
+    <Content Include="Assets\Cat\Reference\brown_8.png" />
+    <Content Include="Assets\Cat\Reference\calico_0.png" />
+    <Content Include="Assets\Cat\Reference\cotton_candy_blue_0.png" />
+    <Content Include="Assets\Cat\Reference\cotton_candy_pink_0.png" />
+    <Content Include="Assets\Cat\Reference\creme_0.png" />
+    <Content Include="Assets\Cat\Reference\creme_1.png" />
+    <Content Include="Assets\Cat\Reference\dark_0.png" />
+    <Content Include="Assets\Cat\Reference\game_boy_0.png" />
+    <Content Include="Assets\Cat\Reference\game_boy_1.png" />
+    <Content Include="Assets\Cat\Reference\game_boy_2.png" />
+    <Content Include="Assets\Cat\Reference\ghost_0.png" />
+    <Content Include="Assets\Cat\Reference\gold_0.png" />
+    <Content Include="Assets\Cat\Reference\grey_0.png" />
+    <Content Include="Assets\Cat\Reference\grey_1.png" />
+    <Content Include="Assets\Cat\Reference\grey_2.png" />
+    <Content Include="Assets\Cat\Reference\hairless_0.png" />
+    <Content Include="Assets\Cat\Reference\hairless_1.png" />
+    <Content Include="Assets\Cat\Reference\indigo_0.png" />
+    <Content Include="Assets\Cat\Reference\Markings\Back Left Foot 000.png" />
+    <Content Include="Assets\Cat\Reference\Markings\Back Left Foot 001.png" />
+    <Content Include="Assets\Cat\Reference\Markings\Back Right Foot 000.png" />
+    <Content Include="Assets\Cat\Reference\Markings\Back Right Foot 001.png" />
+    <Content Include="Assets\Cat\Reference\Markings\Ears 000.png" />
+    <Content Include="Assets\Cat\Reference\Markings\Face Marking 000.png" />
+    <Content Include="Assets\Cat\Reference\Markings\Feet 000.png" />
+    <Content Include="Assets\Cat\Reference\Markings\Front Left Foot 000.png" />
+    <Content Include="Assets\Cat\Reference\Markings\Front Left Foot 001.png" />
+    <Content Include="Assets\Cat\Reference\Markings\Front Right Foot 000.png" />
+    <Content Include="Assets\Cat\Reference\Markings\Left Ear 000.png" />
+    <Content Include="Assets\Cat\Reference\Markings\Right Ear 000.png" />
+    <Content Include="Assets\Cat\Reference\Markings\Tabby Markings 000.png" />
+    <Content Include="Assets\Cat\Reference\Markings\Tail 000.png" />
+    <Content Include="Assets\Cat\Reference\orange_0.png" />
+    <Content Include="Assets\Cat\Reference\orange_1.png" />
+    <Content Include="Assets\Cat\Reference\orange_2.png" />
+    <Content Include="Assets\Cat\Reference\orange_3.png" />
+    <Content Include="Assets\Cat\Reference\peach_0.png" />
+    <Content Include="Assets\Cat\Reference\pink_0.png" />
+    <Content Include="Assets\Cat\Reference\radioactive_0.png" />
+    <Content Include="Assets\Cat\Reference\red_0.png" />
+    <Content Include="Assets\Cat\Reference\red_1.png" />
+    <Content Include="Assets\Cat\Reference\seal_point_0.png" />
+    <Content Include="Assets\Cat\Reference\teal_0.png" />
+    <Content Include="Assets\Cat\Reference\white_0.png" />
+    <Content Include="Assets\Cat\Reference\white_grey_0.png" />
+    <Content Include="Assets\Cat\Reference\white_grey_1.png" />
+    <Content Include="Assets\Cat\Reference\yellow_0.png" />
     <Content Include="Assets\Cat\Sounds\hisses.wav" />
     <Content Include="Assets\Cat\Sounds\meow.wav" />
     <Content Include="Assets\Cat\Sounds\purring.wav" />
+    <Content Include="Assets\Fox\Animations\idle\130px\1.png" />
+    <Content Include="Assets\Fox\Animations\idle\130px\10.png" />
+    <Content Include="Assets\Fox\Animations\idle\130px\11.png" />
+    <Content Include="Assets\Fox\Animations\idle\130px\12.png" />
+    <Content Include="Assets\Fox\Animations\idle\130px\13.png" />
+    <Content Include="Assets\Fox\Animations\idle\130px\14.png" />
+    <Content Include="Assets\Fox\Animations\idle\130px\15.png" />
+    <Content Include="Assets\Fox\Animations\idle\130px\16.png" />
+    <Content Include="Assets\Fox\Animations\idle\130px\17.png" />
+    <Content Include="Assets\Fox\Animations\idle\130px\18.png" />
+    <Content Include="Assets\Fox\Animations\idle\130px\19.png" />
+    <Content Include="Assets\Fox\Animations\idle\130px\2.png" />
+    <Content Include="Assets\Fox\Animations\idle\130px\20.png" />
+    <Content Include="Assets\Fox\Animations\idle\130px\3.png" />
+    <Content Include="Assets\Fox\Animations\idle\130px\4.png" />
+    <Content Include="Assets\Fox\Animations\idle\130px\5.png" />
+    <Content Include="Assets\Fox\Animations\idle\130px\6.png" />
+    <Content Include="Assets\Fox\Animations\idle\130px\7.png" />
+    <Content Include="Assets\Fox\Animations\idle\130px\8.png" />
+    <Content Include="Assets\Fox\Animations\idle\130px\9.png" />
+    <Content Include="Assets\Fox\Animations\idle\64px\1.png" />
+    <Content Include="Assets\Fox\Animations\idle\64px\10.png" />
+    <Content Include="Assets\Fox\Animations\idle\64px\11.png" />
+    <Content Include="Assets\Fox\Animations\idle\64px\12.png" />
+    <Content Include="Assets\Fox\Animations\idle\64px\13.png" />
+    <Content Include="Assets\Fox\Animations\idle\64px\14.png" />
+    <Content Include="Assets\Fox\Animations\idle\64px\15.png" />
+    <Content Include="Assets\Fox\Animations\idle\64px\16.png" />
+    <Content Include="Assets\Fox\Animations\idle\64px\17.png" />
+    <Content Include="Assets\Fox\Animations\idle\64px\18.png" />
+    <Content Include="Assets\Fox\Animations\idle\64px\19.png" />
+    <Content Include="Assets\Fox\Animations\idle\64px\2.png" />
+    <Content Include="Assets\Fox\Animations\idle\64px\20.png" />
+    <Content Include="Assets\Fox\Animations\idle\64px\3.png" />
+    <Content Include="Assets\Fox\Animations\idle\64px\4.png" />
+    <Content Include="Assets\Fox\Animations\idle\64px\5.png" />
+    <Content Include="Assets\Fox\Animations\idle\64px\6.png" />
+    <Content Include="Assets\Fox\Animations\idle\64px\7.png" />
+    <Content Include="Assets\Fox\Animations\idle\64px\8.png" />
+    <Content Include="Assets\Fox\Animations\idle\64px\9.png" />
+    <Content Include="Assets\Fox\Animations\idle\Fox_Idle_dir8.png" />
+    <Content Include="Assets\Fox\Animations\move\e\Fox_Walk_dir6.png" />
+    <Content Include="Assets\Fox\Animations\move\ne\Fox_Walk_dir5.png" />
+    <Content Include="Assets\Fox\Animations\move\nw\130px\1.png" />
+    <Content Include="Assets\Fox\Animations\move\nw\130px\10.png" />
+    <Content Include="Assets\Fox\Animations\move\nw\130px\11.png" />
+    <Content Include="Assets\Fox\Animations\move\nw\130px\12.png" />
+    <Content Include="Assets\Fox\Animations\move\nw\130px\2.png" />
+    <Content Include="Assets\Fox\Animations\move\nw\130px\3.png" />
+    <Content Include="Assets\Fox\Animations\move\nw\130px\4.png" />
+    <Content Include="Assets\Fox\Animations\move\nw\130px\5.png" />
+    <Content Include="Assets\Fox\Animations\move\nw\130px\6.png" />
+    <Content Include="Assets\Fox\Animations\move\nw\130px\7.png" />
+    <Content Include="Assets\Fox\Animations\move\nw\130px\8.png" />
+    <Content Include="Assets\Fox\Animations\move\nw\130px\9.png" />
+    <Content Include="Assets\Fox\Animations\move\nw\64px\1.png" />
+    <Content Include="Assets\Fox\Animations\move\nw\64px\10.png" />
+    <Content Include="Assets\Fox\Animations\move\nw\64px\11.png" />
+    <Content Include="Assets\Fox\Animations\move\nw\64px\12.png" />
+    <Content Include="Assets\Fox\Animations\move\nw\64px\2.png" />
+    <Content Include="Assets\Fox\Animations\move\nw\64px\3.png" />
+    <Content Include="Assets\Fox\Animations\move\nw\64px\4.png" />
+    <Content Include="Assets\Fox\Animations\move\nw\64px\5.png" />
+    <Content Include="Assets\Fox\Animations\move\nw\64px\6.png" />
+    <Content Include="Assets\Fox\Animations\move\nw\64px\7.png" />
+    <Content Include="Assets\Fox\Animations\move\nw\64px\8.png" />
+    <Content Include="Assets\Fox\Animations\move\nw\64px\9.png" />
+    <Content Include="Assets\Fox\Animations\move\nw\Fox_Walk_dir3.png" />
+    <Content Include="Assets\Fox\Animations\move\n\130px\1.png" />
+    <Content Include="Assets\Fox\Animations\move\n\130px\10.png" />
+    <Content Include="Assets\Fox\Animations\move\n\130px\11.png" />
+    <Content Include="Assets\Fox\Animations\move\n\130px\12.png" />
+    <Content Include="Assets\Fox\Animations\move\n\130px\2.png" />
+    <Content Include="Assets\Fox\Animations\move\n\130px\3.png" />
+    <Content Include="Assets\Fox\Animations\move\n\130px\4.png" />
+    <Content Include="Assets\Fox\Animations\move\n\130px\5.png" />
+    <Content Include="Assets\Fox\Animations\move\n\130px\6.png" />
+    <Content Include="Assets\Fox\Animations\move\n\130px\7.png" />
+    <Content Include="Assets\Fox\Animations\move\n\130px\8.png" />
+    <Content Include="Assets\Fox\Animations\move\n\130px\9.png" />
+    <Content Include="Assets\Fox\Animations\move\n\64px\1.png" />
+    <Content Include="Assets\Fox\Animations\move\n\64px\10.png" />
+    <Content Include="Assets\Fox\Animations\move\n\64px\11.png" />
+    <Content Include="Assets\Fox\Animations\move\n\64px\12.png" />
+    <Content Include="Assets\Fox\Animations\move\n\64px\2.png" />
+    <Content Include="Assets\Fox\Animations\move\n\64px\3.png" />
+    <Content Include="Assets\Fox\Animations\move\n\64px\4.png" />
+    <Content Include="Assets\Fox\Animations\move\n\64px\5.png" />
+    <Content Include="Assets\Fox\Animations\move\n\64px\6.png" />
+    <Content Include="Assets\Fox\Animations\move\n\64px\7.png" />
+    <Content Include="Assets\Fox\Animations\move\n\64px\8.png" />
+    <Content Include="Assets\Fox\Animations\move\n\64px\9.png" />
+    <Content Include="Assets\Fox\Animations\move\n\Fox_Walk_dir4.png" />
+    <Content Include="Assets\Fox\Animations\move\se\Fox_Walk_dir7.png" />
+    <Content Include="Assets\Fox\Animations\move\sw\130px\1.png" />
+    <Content Include="Assets\Fox\Animations\move\sw\130px\10.png" />
+    <Content Include="Assets\Fox\Animations\move\sw\130px\11.png" />
+    <Content Include="Assets\Fox\Animations\move\sw\130px\12.png" />
+    <Content Include="Assets\Fox\Animations\move\sw\130px\2.png" />
+    <Content Include="Assets\Fox\Animations\move\sw\130px\3.png" />
+    <Content Include="Assets\Fox\Animations\move\sw\130px\4.png" />
+    <Content Include="Assets\Fox\Animations\move\sw\130px\5.png" />
+    <Content Include="Assets\Fox\Animations\move\sw\130px\6.png" />
+    <Content Include="Assets\Fox\Animations\move\sw\130px\7.png" />
+    <Content Include="Assets\Fox\Animations\move\sw\130px\8.png" />
+    <Content Include="Assets\Fox\Animations\move\sw\130px\9.png" />
+    <Content Include="Assets\Fox\Animations\move\sw\64px\1.png" />
+    <Content Include="Assets\Fox\Animations\move\sw\64px\10.png" />
+    <Content Include="Assets\Fox\Animations\move\sw\64px\11.png" />
+    <Content Include="Assets\Fox\Animations\move\sw\64px\12.png" />
+    <Content Include="Assets\Fox\Animations\move\sw\64px\2.png" />
+    <Content Include="Assets\Fox\Animations\move\sw\64px\3.png" />
+    <Content Include="Assets\Fox\Animations\move\sw\64px\4.png" />
+    <Content Include="Assets\Fox\Animations\move\sw\64px\5.png" />
+    <Content Include="Assets\Fox\Animations\move\sw\64px\6.png" />
+    <Content Include="Assets\Fox\Animations\move\sw\64px\7.png" />
+    <Content Include="Assets\Fox\Animations\move\sw\64px\8.png" />
+    <Content Include="Assets\Fox\Animations\move\sw\64px\9.png" />
+    <Content Include="Assets\Fox\Animations\move\sw\Fox_Walk_dir1.png" />
+    <Content Include="Assets\Fox\Animations\move\s\130px\1.png" />
+    <Content Include="Assets\Fox\Animations\move\s\130px\10.png" />
+    <Content Include="Assets\Fox\Animations\move\s\130px\11.png" />
+    <Content Include="Assets\Fox\Animations\move\s\130px\12.png" />
+    <Content Include="Assets\Fox\Animations\move\s\130px\2.png" />
+    <Content Include="Assets\Fox\Animations\move\s\130px\3.png" />
+    <Content Include="Assets\Fox\Animations\move\s\130px\4.png" />
+    <Content Include="Assets\Fox\Animations\move\s\130px\5.png" />
+    <Content Include="Assets\Fox\Animations\move\s\130px\6.png" />
+    <Content Include="Assets\Fox\Animations\move\s\130px\7.png" />
+    <Content Include="Assets\Fox\Animations\move\s\130px\8.png" />
+    <Content Include="Assets\Fox\Animations\move\s\130px\9.png" />
+    <Content Include="Assets\Fox\Animations\move\s\64px\1.png" />
+    <Content Include="Assets\Fox\Animations\move\s\64px\10.png" />
+    <Content Include="Assets\Fox\Animations\move\s\64px\11.png" />
+    <Content Include="Assets\Fox\Animations\move\s\64px\12.png" />
+    <Content Include="Assets\Fox\Animations\move\s\64px\2.png" />
+    <Content Include="Assets\Fox\Animations\move\s\64px\3.png" />
+    <Content Include="Assets\Fox\Animations\move\s\64px\4.png" />
+    <Content Include="Assets\Fox\Animations\move\s\64px\5.png" />
+    <Content Include="Assets\Fox\Animations\move\s\64px\6.png" />
+    <Content Include="Assets\Fox\Animations\move\s\64px\7.png" />
+    <Content Include="Assets\Fox\Animations\move\s\64px\8.png" />
+    <Content Include="Assets\Fox\Animations\move\s\64px\9.png" />
+    <Content Include="Assets\Fox\Animations\move\s\Fox_Walk_dir8.png" />
+    <Content Include="Assets\Fox\Animations\move\w\130px\1.png" />
+    <Content Include="Assets\Fox\Animations\move\w\130px\10.png" />
+    <Content Include="Assets\Fox\Animations\move\w\130px\11.png" />
+    <Content Include="Assets\Fox\Animations\move\w\130px\12.png" />
+    <Content Include="Assets\Fox\Animations\move\w\130px\2.png" />
+    <Content Include="Assets\Fox\Animations\move\w\130px\3.png" />
+    <Content Include="Assets\Fox\Animations\move\w\130px\4.png" />
+    <Content Include="Assets\Fox\Animations\move\w\130px\5.png" />
+    <Content Include="Assets\Fox\Animations\move\w\130px\6.png" />
+    <Content Include="Assets\Fox\Animations\move\w\130px\7.png" />
+    <Content Include="Assets\Fox\Animations\move\w\130px\8.png" />
+    <Content Include="Assets\Fox\Animations\move\w\130px\9.png" />
+    <Content Include="Assets\Fox\Animations\move\w\64px\1.png" />
+    <Content Include="Assets\Fox\Animations\move\w\64px\10.png" />
+    <Content Include="Assets\Fox\Animations\move\w\64px\11.png" />
+    <Content Include="Assets\Fox\Animations\move\w\64px\12.png" />
+    <Content Include="Assets\Fox\Animations\move\w\64px\2.png" />
+    <Content Include="Assets\Fox\Animations\move\w\64px\3.png" />
+    <Content Include="Assets\Fox\Animations\move\w\64px\4.png" />
+    <Content Include="Assets\Fox\Animations\move\w\64px\5.png" />
+    <Content Include="Assets\Fox\Animations\move\w\64px\6.png" />
+    <Content Include="Assets\Fox\Animations\move\w\64px\7.png" />
+    <Content Include="Assets\Fox\Animations\move\w\64px\8.png" />
+    <Content Include="Assets\Fox\Animations\move\w\64px\9.png" />
+    <Content Include="Assets\Fox\Animations\move\w\Fox_Walk_dir2.png" />
+    <Content Include="Assets\Fox\frame-grid-130px.png" />
+    <Content Include="Assets\Fox\Reference\Fox_Idle_dir1.png" />
+    <Content Include="Assets\Fox\Reference\Fox_Idle_dir2.png" />
+    <Content Include="Assets\Fox\Reference\Fox_Idle_dir3.png" />
+    <Content Include="Assets\Fox\Reference\Fox_Idle_dir4.png" />
+    <Content Include="Assets\Fox\Reference\Fox_Idle_dir5.png" />
+    <Content Include="Assets\Fox\Reference\Fox_Idle_dir6.png" />
+    <Content Include="Assets\Fox\Reference\Fox_Idle_dir7.png" />
+    <Content Include="Assets\Fox\Reference\Fox_Plain_Idle_dir1.png" />
+    <Content Include="Assets\Fox\Reference\Fox_Plain_Idle_dir2.png" />
+    <Content Include="Assets\Fox\Reference\Fox_Plain_Idle_dir3.png" />
+    <Content Include="Assets\Fox\Reference\Fox_Plain_Idle_dir4.png" />
+    <Content Include="Assets\Fox\Reference\Fox_Plain_Idle_dir5.png" />
+    <Content Include="Assets\Fox\Reference\Fox_Plain_Idle_dir6.png" />
+    <Content Include="Assets\Fox\Reference\Fox_Plain_Idle_dir7.png" />
+    <Content Include="Assets\Fox\Reference\Fox_Plain_Idle_dir8.png" />
+    <Content Include="Assets\Fox\Reference\Fox_Plain_Walk_dir1.png" />
+    <Content Include="Assets\Fox\Reference\Fox_Plain_Walk_dir2.png" />
+    <Content Include="Assets\Fox\Reference\Fox_Plain_Walk_dir3.png" />
+    <Content Include="Assets\Fox\Reference\Fox_Plain_Walk_dir4.png" />
+    <Content Include="Assets\Fox\Reference\Fox_Plain_Walk_dir5.png" />
+    <Content Include="Assets\Fox\Reference\Fox_Plain_Walk_dir6.png" />
+    <Content Include="Assets\Fox\Reference\Fox_Plain_Walk_dir7.png" />
+    <Content Include="Assets\Fox\Reference\Fox_Plain_Walk_dir8.png" />
     <Content Include="Koshenya.ico" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.6.2">
       <Visible>False</Visible>
-      <ProductName>Microsoft .NET Framework 4.6.2 %28x86 и x64%29</ProductName>
+      <ProductName>Microsoft .NET Framework 4.6.2 %28x86 and x64%29</ProductName>
       <Install>true</Install>
     </BootstrapperPackage>
     <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
@@ -388,5 +716,6 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

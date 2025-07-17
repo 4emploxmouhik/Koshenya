@@ -7,11 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Koshenya", "Koshenya\Koshen
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Элементы решения", "Элементы решения", "{1720E53F-12E9-4A84-ABF5-21C79482C92E}"
 	ProjectSection(SolutionItems) = preProject
-		Koshenya.drawio = Koshenya.drawio
 		README.md = README.md
 	EndProjectSection
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Koshenya.Tools", "Koshenya.Tools\Koshenya.Tools.csproj", "{A2C416A5-BF08-425D-B0A1-91A0413DBD6B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

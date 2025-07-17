@@ -46,7 +46,7 @@
     
     mimetype: application/x-microsoft.net.object.binary.base64
     value   : The object must be serialized with 
-            : System.Serialization.Formatters.Binary.BinaryFormatter
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
             : and then encoded with base64 encoding.
     
     mimetype: application/x-microsoft.net.object.soap.base64
@@ -60,6 +60,7 @@
             : and then encoded with base64 encoding.
     -->
   <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xsd:element name="root" msdata:IsDataSet="true">
       <xsd:complexType>
         <xsd:choice maxOccurs="unbounded">
@@ -68,9 +69,10 @@
               <xsd:sequence>
                 <xsd:element name="value" type="xsd:string" minOccurs="0" />
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" />
+              <xsd:attribute name="name" use="required" type="xsd:string" />
               <xsd:attribute name="type" type="xsd:string" />
               <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="assembly">
@@ -85,9 +87,10 @@
                 <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
                 <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" msdata:Ordinal="1" />
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
               <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
               <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="resheader">
@@ -109,9 +112,166 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="aRun_SouthWest_7" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Cat\Animations\Brown\run\sw\7.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="aIdle" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Cat\Animations\Brown\idle\1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="aRun_NorthWest_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Cat\Animations\Brown\run\nw\1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="aRun_NorthWest_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Cat\Animations\Brown\run\nw\2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="aRun_NorthWest_5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Cat\Animations\Brown\run\nw\5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="aRun_NorthWest_6" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Cat\Animations\Brown\run\nw\6.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="aRun_NorthWest_7" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Cat\Animations\Brown\run\nw\7.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="aRun_NorthWest_8" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Cat\Animations\Brown\run\nw\8.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="aRun_North_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Cat\Animations\Brown\run\n\1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="aRun_North_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Cat\Animations\Brown\run\n\2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="aRun_North_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Cat\Animations\Brown\run\n\3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="aRun_North_4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Cat\Animations\Brown\run\n\4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="aRun_North_5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Cat\Animations\Brown\run\n\5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="aRun_North_6" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Cat\Animations\Brown\run\n\6.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="aRun_North_7" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Cat\Animations\Brown\run\n\7.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="aRun_North_8" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Cat\Animations\Brown\run\n\8.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="aRun_SouthWest_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Cat\Animations\Brown\run\sw\1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="aRun_SouthWest_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Cat\Animations\Brown\run\sw\2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="aRun_SouthWest_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Cat\Animations\Brown\run\sw\3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="aRun_SouthWest_4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Cat\Animations\Brown\run\sw\4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="aRun_SouthWest_5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Cat\Animations\Brown\run\sw\5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="aRun_SouthWest_6" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Cat\Animations\Brown\run\sw\6.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="aRun_SouthWest_8" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Cat\Animations\Brown\run\sw\8.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="aRun_South_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Cat\Animations\Brown\run\s\1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="aRun_South_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Cat\Animations\Brown\run\s\2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="aRun_South_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Cat\Animations\Brown\run\s\3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="aRun_South_4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Cat\Animations\Brown\run\s\4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="aRun_South_5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Cat\Animations\Brown\run\s\5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="aRun_South_6" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Cat\Animations\Brown\run\s\6.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="aRun_South_7" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Cat\Animations\Brown\run\s\7.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="aRun_South_8" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Cat\Animations\Brown\run\s\8.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="aRun_West_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Cat\Animations\Brown\run\w\1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="aRun_West_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Cat\Animations\Brown\run\w\2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="aRun_West_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Cat\Animations\Brown\run\w\3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="aRun_West_4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Cat\Animations\Brown\run\w\4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="aRun_West_5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Cat\Animations\Brown\run\w\5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="aRun_West_6" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Cat\Animations\Brown\run\w\6.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="aRun_West_7" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Cat\Animations\Brown\run\w\7.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="aRun_West_8" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Cat\Animations\Brown\run\w\8.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="sMeow" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Cat\Sounds\meow.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="aRun_NorthWest_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Cat\Animations\Brown\run\nw\3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="aRun_NorthWest_4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Cat\Animations\Brown\run\nw\4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="aMeow_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Cat\Animations\Brown\meow\1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="aMeow_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Cat\Animations\Brown\meow\2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="aMeow_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Cat\Animations\Brown\meow\3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="aMeow_4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Cat\Animations\Brown\meow\4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="aMeow_5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Cat\Animations\Brown\meow\5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="aBlink_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Cat\Animations\Brown\blink\1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="aBlink_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Cat\Animations\Brown\blink\2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="aBlink_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Cat\Animations\Brown\blink\3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="aBlink_4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Cat\Animations\Brown\blink\4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="aBlink_5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Cat\Animations\Brown\blink\5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Koshenya.Core
 {
@@ -15,6 +16,7 @@ namespace Koshenya.Core
         public string Name { get; }
         public Animation Default { get; }
         public List<Item> PlaybackQueue { get; }
+        public long Length => PlaybackQueue.Count == 0 ? Default.Length : PlaybackQueue[PlaybackQueue.Count - 1].EndTime;
 
         public void Add(Animation animation, long launchTime)
         {
@@ -37,6 +39,12 @@ namespace Koshenya.Core
             Sort();
         }
 
+        public void Remove(string animationName)
+        {
+            PlaybackQueue.Remove(PlaybackQueue.First(x => x.Animation.Name == animationName));
+            Sort();
+        }
+
         private void Sort()
         {
             PlaybackQueue.Sort((x, y) =>
@@ -50,9 +58,7 @@ namespace Koshenya.Core
             {
                 // Solving the problem of animation overlapping
                 if (PlaybackQueue[i + 1].LaunchTime < PlaybackQueue[i].EndTime)
-                {
                     PlaybackQueue[i + 1].LaunchTime = PlaybackQueue[i].EndTime;
-                }
 
                 PlaybackQueue[i + 1].LaunchFrame = PlaybackQueue[i].EndFrame;
                 PlaybackQueue[i + 1].LaunchFrame += (long)Math.Ceiling((double)(
