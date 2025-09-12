@@ -16,9 +16,7 @@ namespace Koshenya.Core.States
         private void AnimationPlayer_ClipEnded(object sender, AnimationClip e)
         {
             if (e.Name == _animation.Name)
-            {
                 _character.SetState(CharacterStateType.Sleeping);
-            }
         }
 
         public override void Handle()
@@ -62,10 +60,10 @@ namespace Koshenya.Core.States
         public override void Handle()
         {
             _character.SoundPlayer.SoundLocation = _sound;
+            
             if (!Settings.Default.IsMutted)
-            {
                 _character.SoundPlayer.PlayLooping();
-            }
+
             _character.AnimationPlayer.Play(_animation);
         }
     }

@@ -26,7 +26,12 @@ namespace Koshenya.Core.States
         {
             if (!_character.IsDraggingModeActive)
             {
-                if (!_character.IsSleeping)
+                if (_character.Movement.IsPatrolling)
+                {
+                    _character.SetState(CharacterStateType.Move);
+                    _character.Movement.Start();
+                }
+                else if (!_character.IsSleeping)
                 {
                     _character.SetState(CharacterStateType.Idle);
                     await Task.Delay(1000);

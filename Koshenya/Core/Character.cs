@@ -1,6 +1,7 @@
 ﻿using Koshenya.Properties;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Media;
 using System.Windows.Forms;
 
@@ -11,6 +12,7 @@ namespace Koshenya.Core
         private readonly ICharacterBox _box;
 
         private readonly Dictionary<CharacterStateType, CharacterState> _declareStates;
+        private CharacterStateType _currentStateType;
         private CharacterState _currentState;
 
         public Character(ICharacterBox box)
@@ -24,7 +26,7 @@ namespace Koshenya.Core
         }
 
         public event EventHandler DraggingModeChanged;
-
+        
         public string Name { get; set; }
         public Movement Movement { get; }
         public AnimationPlayer AnimationPlayer { get; }
@@ -65,14 +67,30 @@ namespace Koshenya.Core
                 SoundPlayer.Stop();
         }
 
+        public void Patrol()
+        {
+            Movement.IsPatrolling = !Movement.IsPatrolling;
+        }
+
         public void Punch()
         {
-            SetState(CharacterStateType.Punch);
+            if (_currentStateType == CharacterStateType.Idle)
+                SetState(CharacterStateType.Punch);
         }
 
         public void SetState(CharacterStateType state)
         {
-            _currentState = _declareStates.ContainsKey(state) ? _declareStates[state] : _declareStates[CharacterStateType.Idle];
+            if (_declareStates.ContainsKey(state))
+            {
+                _currentState = _declareStates[state];
+                _currentStateType = state;
+            }
+            else
+            {
+                _currentState = _declareStates[CharacterStateType.Idle];
+                _currentStateType = CharacterStateType.Idle;
+            }
+            
             _currentState.Handle();
         }
 

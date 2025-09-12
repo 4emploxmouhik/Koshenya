@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Drawing;
-using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
 namespace Koshenya.Core
@@ -8,13 +7,15 @@ namespace Koshenya.Core
     internal class Movement
     {
         private readonly IMovementBox _box;
-        private readonly Timer _timer;
-
         private readonly int _triggerBounds;
+        private readonly Timer _timer;
         private readonly int _runFactor;
+        private readonly Random _random;
+        private readonly Rectangle _virtualSreen;
 
         private Point _target;
         private int _speed;
+        private bool _isPatrolliing;
 
         public Movement(IMovementBox box)
         {
@@ -23,31 +24,42 @@ namespace Koshenya.Core
             _timer.Tick += Timer_Tick;
             _triggerBounds = _box.Size.Width / 4;
             _runFactor = 10;
+            _random = new Random();
+            _virtualSreen = new Rectangle()
+            {
+                X = User32Dll.GetSystemMetrics(User32Dll.SM_XVIRTUALSCREEN),
+                Y = User32Dll.GetSystemMetrics(User32Dll.SM_YVIRTUALSCREEN),
+                Width = User32Dll.GetSystemMetrics(User32Dll.SM_CXVIRTUALSCREEN),
+                Height = User32Dll.GetSystemMetrics(User32Dll.SM_CYVIRTUALSCREEN)
+            };
         }
 
         public event EventHandler<Directions> DirectionChanged;
         public event EventHandler<Speeds> SpeedChanged;
+        public event EventHandler TargetCatched;
 
         public enum Directions
         {
-            None = -1, 
-            North = 0, 
-            NorthWest = 1, 
-            West = 2, 
+            None = -1,
+            North = 0,
+            NorthWest = 1,
+            West = 2,
             SouthWest = 3,
             South = 4,
-            SouthEast = 5, 
-            East = 6, 
+            SouthEast = 5,
+            East = 6,
             NorthEast = 7,
         }
         public enum Speeds
         {
-            None = -1, 
-            Walk = 0, 
+            None = -1,
+            Walk = 0,
             Run = 1
         }
+
         public Directions Direction { get; protected set; }
         public Speeds Speed { get; protected set; }
+        public bool IsTagetCatched { get; protected set; }
         public int Reaction
         {
             get => _timer.Interval;
@@ -55,39 +67,14 @@ namespace Koshenya.Core
         }
         public int WalkSpeed { get; set; }
         public int RunSpeed { get; set; }
-
-        [DllImport("user32.dll")]
-        public static extern bool GetCursorPos(out Point lpPoint);
-
-        public static string GetShortNameOfDirection(Directions direction)
-        {
-            switch (direction)
-            {
-                case Directions.East: return "e";
-                case Directions.West: return "w";
-                case Directions.North: return "n";
-                case Directions.South: return "s";
-                case Directions.NorthEast: return "ne";
-                case Directions.NorthWest: return "nw";
-                case Directions.SouthEast: return "se";
-                case Directions.SouthWest: return "sw";
-                default: return "none";
-            }
-        }
-        public static Directions GetDirectionByShortName(string name)
-        {
-            switch (name)
-            {
-                case "e": return Directions.East;
-                case "w": return Directions.West;
-                case "n": return Directions.North;
-                case "s": return Directions.South;
-                case "ne": return Directions.NorthEast;
-                case "nw": return Directions.NorthWest;
-                case "se": return Directions.SouthEast;
-                case "sw": return Directions.SouthWest;
-                default: return Directions.None;
-            }
+        public bool IsPatrolling 
+        { 
+            get => _isPatrolliing; 
+            set 
+            { 
+                _isPatrolliing = value; 
+                _target = _box.Location; 
+            } 
         }
 
         public void Start() => _timer.Start();
@@ -107,24 +94,20 @@ namespace Koshenya.Core
             if (Direction != direction)
             {
                 Direction = direction;
+
+                if (Direction == Directions.None)
+                    OnTargetCatched();
+                else 
+                    IsTagetCatched = false;
+
                 DirectionChanged?.Invoke(this, direction);
             }
         }
 
-        private void Timer_Tick(object sender, EventArgs e)
+        protected virtual void OnTargetCatched()
         {
-            GetCursorPos(out _target);
-            SetSpeed();
-
-            MovementPoint destination = GetMovementPoint();
-
-            OnDirectionChange(destination.Direction);
-
-            _box.Location = new Point()
-            {
-                X = _box.Location.X + destination.Vector.X,
-                Y = _box.Location.Y + destination.Vector.Y
-            };
+            IsTagetCatched = true;
+            TargetCatched?.Invoke(this, EventArgs.Empty);
         }
 
         private MovementPoint GetMovementPoint()
@@ -137,9 +120,7 @@ namespace Koshenya.Core
             if (yMin <= _target.Y && _target.Y <= yMax)
             {
                 if (xMin <= _target.X && _target.X <= xMax)
-                {
                     return new MovementPoint(0, 0, Directions.None);
-                }
 
                 return _target.X < xMin ? new MovementPoint(-_speed, 0, Directions.West)
                     : new MovementPoint(_speed, 0, Directions.East);
@@ -147,9 +128,8 @@ namespace Koshenya.Core
             if (_target.Y < yMin)
             {
                 if (xMin <= _target.X && _target.X <= xMax)
-                {
                     return new MovementPoint(0, -_speed, Directions.North);
-                }
+
                 _speed -= _speed / 3;
 
                 return _target.X < xMin ? new MovementPoint(-_speed, -_speed, Directions.NorthWest)
@@ -158,9 +138,8 @@ namespace Koshenya.Core
             if (_target.Y > yMax)
             {
                 if (xMin <= _target.X && _target.X <= xMax)
-                {
                     return new MovementPoint(0, _speed, Directions.South);
-                }
+
                 _speed -= _speed / 3;
 
                 return _target.X < xMin ? new MovementPoint(-_speed, _speed, Directions.SouthWest)
@@ -192,11 +171,51 @@ namespace Koshenya.Core
                     OnSpeedChange(Speeds.Walk);
                 }
             }
+            else if (IsPatrolling && WalkSpeed != 0)
+            {
+                _speed = WalkSpeed;
+                OnSpeedChange(Speeds.Walk);
+            }
             else
             {
                 _speed = RunSpeed;
                 OnSpeedChange(Speeds.Run);
             }
+        }
+
+        private void SetTarget()
+        {
+            if (!IsPatrolling)
+            {
+                User32Dll.GetCursorPos(out _target);
+            }
+            else
+            {
+                Point possibleTarget = new Point()
+                {
+                    X = _random.Next(_virtualSreen.X, _virtualSreen.Width),
+                    Y = _random.Next(_virtualSreen.Y, _virtualSreen.Height)
+                };
+
+                if (IsTagetCatched)
+                    _target = possibleTarget;
+            }
+        }
+
+        private void Timer_Tick(object sender, EventArgs e)
+        {
+            SetTarget();
+            SetSpeed();
+
+            MovementPoint destination = GetMovementPoint();
+
+            OnDirectionChange(destination.Direction);
+
+            _box.Location = new Point()
+            {
+                X = _box.Location.X + destination.Vector.X,
+                Y = _box.Location.Y + destination.Vector.Y
+            };
         }
 
         private struct MovementPoint

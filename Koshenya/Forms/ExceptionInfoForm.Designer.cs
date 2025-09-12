@@ -69,8 +69,22 @@
             label3.TabIndex = 4;
             label3.Text = "Message:";
             // 
+            // okButton
+            // 
+            okButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            okButton.Location = new System.Drawing.Point(157, 361);
+            okButton.Name = "okButton";
+            okButton.Size = new System.Drawing.Size(75, 23);
+            okButton.TabIndex = 6;
+            okButton.Text = "OK";
+            okButton.UseVisualStyleBackColor = true;
+            okButton.Click += new System.EventHandler(this.OkButton_Click);
+            // 
             // stackTraceTextBox
             // 
+            this.stackTraceTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.stackTraceTextBox.BackColor = System.Drawing.Color.White;
             this.stackTraceTextBox.Location = new System.Drawing.Point(15, 146);
             this.stackTraceTextBox.Multiline = true;
@@ -81,6 +95,8 @@
             // 
             // exceptionTextBox
             // 
+            this.exceptionTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.exceptionTextBox.BackColor = System.Drawing.Color.White;
             this.exceptionTextBox.Location = new System.Drawing.Point(75, 17);
             this.exceptionTextBox.Name = "exceptionTextBox";
@@ -90,6 +106,8 @@
             // 
             // messageTextBox
             // 
+            this.messageTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.messageTextBox.BackColor = System.Drawing.Color.White;
             this.messageTextBox.Location = new System.Drawing.Point(71, 51);
             this.messageTextBox.Multiline = true;
@@ -97,16 +115,6 @@
             this.messageTextBox.ReadOnly = true;
             this.messageTextBox.Size = new System.Drawing.Size(302, 57);
             this.messageTextBox.TabIndex = 5;
-            // 
-            // okButton
-            // 
-            okButton.Location = new System.Drawing.Point(157, 361);
-            okButton.Name = "okButton";
-            okButton.Size = new System.Drawing.Size(75, 23);
-            okButton.TabIndex = 6;
-            okButton.Text = "OK";
-            okButton.UseVisualStyleBackColor = true;
-            okButton.Click += new System.EventHandler(this.OkButton_Click);
             // 
             // ExceptionInfoForm
             // 

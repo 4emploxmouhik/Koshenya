@@ -99,16 +99,14 @@ namespace Koshenya.Forms
         private void CharacterBox_MouseDown(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Right)
-            {
                 _character.DraggingStart();
-            }
         }
 
         private void CharacterBox_MouseMove(object sender, MouseEventArgs e)
         {
             if (_character.IsDraggingModeActive)
             {
-                Movement.GetCursorPos(out Point point);
+                User32Dll.GetCursorPos(out Point point);
                 Location = point;
             }
         }
@@ -116,9 +114,7 @@ namespace Koshenya.Forms
         private void CharacterBox_MouseUp(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Right)
-            {
                 _character.DraggingEnd();
-            }
         }
 
         #region Menu
@@ -130,8 +126,7 @@ namespace Koshenya.Forms
         private void MuteMenuItem_Click(object sender, EventArgs e)
         {
             _character.Mute();
-
-            ((ToolStripMenuItem)sender).Checked = Settings.Default.IsMutted;
+            muteMenuItem.Checked = Settings.Default.IsMutted;
         }
 
         private void CreateCharacterMenuItem_Click(object sender, EventArgs e)
@@ -141,9 +136,7 @@ namespace Koshenya.Forms
             using (CharacterConfigurationForm form = new CharacterConfigurationForm())
             {
                 if (form.ShowDialog() == DialogResult.OK)
-                {
                     MessageBox.Show("New character configuration saved.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
             }
 
             _character.Start();
@@ -152,6 +145,12 @@ namespace Koshenya.Forms
         private void ManageAssetsMenuItem_Click(object sender, EventArgs e)
         {
             Process.Start("explorer.exe", $"{Directory.GetCurrentDirectory()}\\Assets");
+        }
+
+        private void PatrolMenuItem_Click(object sender, EventArgs e)
+        {
+            patrolToolStripMenuItem.Checked = !patrolToolStripMenuItem.Checked;
+            _character.Patrol();
         }
         #endregion
     }

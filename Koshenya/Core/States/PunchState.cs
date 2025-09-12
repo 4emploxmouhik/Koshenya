@@ -41,9 +41,7 @@ namespace Koshenya.Core.States
         private void AnimationPlayer_AnimationEnded(object sender, Animation e)
         {
             if (_animations.Contains(e))
-            {
                 _character.SetState(CharacterStateType.Idle);
-            }
         }
 
         public override void Handle()
@@ -56,9 +54,8 @@ namespace Koshenya.Core.States
                 _character.SoundPlayer.Stream = _soundsStreams[assetsIndx];
 
             if (!Settings.Default.IsMutted)
-            {
                 _character.SoundPlayer.Play();
-            }
+
             _character.AnimationPlayer.Play(_animations[assetsIndx]);
 
             if (_punch == _aggressivePunch)

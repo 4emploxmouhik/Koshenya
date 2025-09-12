@@ -7,7 +7,7 @@ namespace Koshenya.Core.States
         private readonly AnimationClip _animation;
 
         private readonly int _idleClipsBeforeSleeping;
-        private int counter;
+        private int _counter;
 
         public IdleState(Character character, AnimationClip clip, int timeBeforeSleep) : base(character)
         {
@@ -26,9 +26,7 @@ namespace Koshenya.Core.States
         private void Character_DraggingModeChanged(object sender, EventArgs e)
         {
             if (_character.IsDraggingModeActive)
-            {
                 _character.SetState(CharacterStateType.Drag);
-            }
         }
 
         private void Movement_DirectionChanged(object sender, Movement.Directions e)
@@ -41,10 +39,10 @@ namespace Koshenya.Core.States
         {
             if (e.Name == _animation.Name)
             {
-                if (++counter == _idleClipsBeforeSleeping)
+                if (++_counter == _idleClipsBeforeSleeping)
                 {
                     _character.SetState(CharacterStateType.FallAsleep);
-                    counter = 0;
+                    _counter = 0;
                 }
             }
         }
