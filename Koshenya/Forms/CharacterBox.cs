@@ -144,7 +144,10 @@ namespace Koshenya.Forms
 
         private void ManageAssetsMenuItem_Click(object sender, EventArgs e)
         {
-            Process.Start("explorer.exe", $"{Directory.GetCurrentDirectory()}\\Assets");
+            string currentDirectory = Directory.GetCurrentDirectory();
+            string assetsDirectory = Path.Combine(currentDirectory, "Assets");
+
+            Process.Start("explorer.exe", Directory.Exists(assetsDirectory) ? assetsDirectory : currentDirectory);
         }
 
         private void PatrolMenuItem_Click(object sender, EventArgs e)
