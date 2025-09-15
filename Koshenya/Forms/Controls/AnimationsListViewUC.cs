@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace Koshenya.Forms.Controls
 {
-    public partial class AnimationsListViewUC : UserControl, IBox
+    public partial class AnimationsListViewUC : UserControl, IAnimationBox
     {
         private readonly AnimationPlayer _player;
         private bool _isAnimationPlayed;

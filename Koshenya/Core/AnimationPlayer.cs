@@ -6,7 +6,7 @@ namespace Koshenya.Core
 {
     internal class AnimationPlayer
     {
-        private readonly IBox _box;
+        private readonly IAnimationBox _box;
         private readonly Timer _timer;
 
         private Animation _animation;
@@ -17,7 +17,7 @@ namespace Koshenya.Core
         private int _clipAnimIndx = 0;
         private bool _isClipPlayed;
 
-        public AnimationPlayer(IBox box)
+        public AnimationPlayer(IAnimationBox box)
         {
             _box = box;
             _timer = new Timer();

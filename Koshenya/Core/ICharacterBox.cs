@@ -3,7 +3,7 @@ using System.Windows.Forms;
 
 namespace Koshenya.Core
 {
-    internal interface IBox
+    internal interface IAnimationBox
     {
         Image Frame { get; set; }
     }
@@ -14,7 +14,7 @@ namespace Koshenya.Core
         Size Size { get; }
     }
 
-    internal interface ICharacterBox : IBox, IMovementBox
+    internal interface ICharacterBox : IAnimationBox, IMovementBox
     {
         Cursor Cursor { get; set; }
     }
