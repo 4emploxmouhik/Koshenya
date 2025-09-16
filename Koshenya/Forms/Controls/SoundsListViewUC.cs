@@ -44,9 +44,36 @@ namespace Koshenya.Forms.Controls
                 Name = nameTextBox.Text,
                 Source = sourceTextBox.Text,
             });
-
             listBox.Items.Add(nameTextBox.Text);
         }
+
+        private void AddAllbutton_Click(object sender, EventArgs e)
+        {
+            using (var dialog = new FolderBrowserDialog())
+            {
+                if (dialog.ShowDialog() == DialogResult.OK)
+                {
+                    DirectoryInfo directory = new DirectoryInfo(dialog.SelectedPath);
+                    FileInfo[] files = directory.GetFiles();
+
+                    foreach (var file in files)
+                    {
+                        if (file.Extension != ".wav")
+                            continue;
+
+                        string name = file.Name.Substring(0, file.Name.LastIndexOf('.'));
+
+                        Sounds.Add(new CharacterConfiguration.Sound()
+                        {
+                            Name = name,
+                            Source = file.FullName,
+                        });
+                        listBox.Items.Add(name);
+                    }
+                }
+            }
+        }
+
 
         private void PlayButton_Click(object sender, EventArgs e)
         {
@@ -88,7 +115,6 @@ namespace Koshenya.Forms.Controls
 
             var selectedSound = Sounds.First(x => x.Name == listBox.Items[listBox.SelectedIndex].ToString());
             Sounds.Remove(selectedSound);
-
             listBox.Items.RemoveAt(listBox.SelectedIndex);
         }
 
@@ -106,6 +132,17 @@ namespace Koshenya.Forms.Controls
                     nameTextBox.Text = name;
                 }
             }
+        }
+
+        private void ClearAllButton_Click(object sender, EventArgs e)
+        {
+            Sounds.Clear();
+            listBox.Items.Clear();
+            nameTextBox.Clear();
+            sourceTextBox.Clear();
+            _player.Stop();
+            _isSoundPlaying = false;
+            playButton.Text = "Play";
         }
 
         private void ListBox_SelectedIndexChanged(object sender, EventArgs e)

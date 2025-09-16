@@ -38,25 +38,27 @@ namespace Koshenya.Forms.Controls.StateParametersUC
         {
             string animation = (string)animsComboBox.SelectedItem;
             long time = (long)timeNumUpDown.Value;
+            long timeScale;
             string timeUnit;
 
             switch (timeUnitComboBox.SelectedIndex) 
             {
-                case 1: 
-                    time *= 1000; 
+                case 1:
+                    timeScale = 1000;
                     timeUnit = "sec";
                     break;
-                case 2: 
-                    time *= 60000;
+                case 2:
+                    timeScale = 60000;
                     timeUnit = "min";
                     break;
                 default:
+                    timeScale = 1;
                     timeUnit = "ms";
                     break;
             }
-
-            animsListBox.Items.Add($"Animation: {animation} starts at {time} {timeUnit}");
-
+            
+            time *= timeScale;
+            animsListBox.Items.Add($"Animation: {animation} starts at {time / timeScale} {timeUnit}");
             _parameters.Animations.Add(animation);
             _parameters.AnimationsTimes.Add(time);
         }

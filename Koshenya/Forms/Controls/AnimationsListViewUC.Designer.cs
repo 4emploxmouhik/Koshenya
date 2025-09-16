@@ -34,6 +34,8 @@
             System.Windows.Forms.Button browseButton;
             System.Windows.Forms.Label label1;
             System.Windows.Forms.Label label2;
+            System.Windows.Forms.Button addAllButton;
+            System.Windows.Forms.Button clearAllButton;
             this.playButton = new System.Windows.Forms.Button();
             this.pictureBox = new System.Windows.Forms.PictureBox();
             this.fpsNumericUpDown = new System.Windows.Forms.NumericUpDown();
@@ -49,15 +51,95 @@
             browseButton = new System.Windows.Forms.Button();
             label1 = new System.Windows.Forms.Label();
             label2 = new System.Windows.Forms.Label();
+            addAllButton = new System.Windows.Forms.Button();
+            clearAllButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fpsNumericUpDown)).BeginInit();
             this.SuspendLayout();
             // 
+            // editButton
+            // 
+            editButton.Location = new System.Drawing.Point(128, 117);
+            editButton.Name = "editButton";
+            editButton.Size = new System.Drawing.Size(55, 23);
+            editButton.TabIndex = 9;
+            editButton.Text = "Edit";
+            editButton.UseVisualStyleBackColor = true;
+            editButton.Click += new System.EventHandler(this.EditButton_Click);
+            // 
+            // addButton
+            // 
+            addButton.Location = new System.Drawing.Point(6, 117);
+            addButton.Name = "addButton";
+            addButton.Size = new System.Drawing.Size(55, 23);
+            addButton.TabIndex = 8;
+            addButton.Text = "Add";
+            addButton.UseVisualStyleBackColor = true;
+            addButton.Click += new System.EventHandler(this.AddButton_Click);
+            // 
+            // removeButton
+            // 
+            removeButton.Location = new System.Drawing.Point(250, 117);
+            removeButton.Name = "removeButton";
+            removeButton.Size = new System.Drawing.Size(55, 23);
+            removeButton.TabIndex = 11;
+            removeButton.Text = "Remove";
+            removeButton.UseVisualStyleBackColor = true;
+            removeButton.Click += new System.EventHandler(this.RemoveButton_Click);
+            // 
+            // browseButton
+            // 
+            browseButton.Location = new System.Drawing.Point(209, 214);
+            browseButton.Name = "browseButton";
+            browseButton.Size = new System.Drawing.Size(57, 23);
+            browseButton.TabIndex = 4;
+            browseButton.Text = "Browse";
+            browseButton.UseVisualStyleBackColor = true;
+            browseButton.Click += new System.EventHandler(this.BrowseButton_Click);
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new System.Drawing.Point(0, 161);
+            label1.Name = "label1";
+            label1.Size = new System.Drawing.Size(38, 13);
+            label1.TabIndex = 39;
+            label1.Text = "Name:";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new System.Drawing.Point(0, 200);
+            label2.Name = "label2";
+            label2.Size = new System.Drawing.Size(44, 13);
+            label2.TabIndex = 42;
+            label2.Text = "Source:";
+            // 
+            // addAllButton
+            // 
+            addAllButton.Location = new System.Drawing.Point(67, 117);
+            addAllButton.Name = "addAllButton";
+            addAllButton.Size = new System.Drawing.Size(55, 23);
+            addAllButton.TabIndex = 48;
+            addAllButton.Text = "Add All";
+            addAllButton.UseVisualStyleBackColor = true;
+            addAllButton.Click += new System.EventHandler(this.AddAllButton_Click);
+            // 
+            // clearAllButton
+            // 
+            clearAllButton.Location = new System.Drawing.Point(311, 117);
+            clearAllButton.Name = "clearAllButton";
+            clearAllButton.Size = new System.Drawing.Size(55, 23);
+            clearAllButton.TabIndex = 49;
+            clearAllButton.Text = "Clear All";
+            clearAllButton.UseVisualStyleBackColor = true;
+            clearAllButton.Click += new System.EventHandler(this.ClearAllButton_Click);
+            // 
             // playButton
             // 
-            this.playButton.Location = new System.Drawing.Point(184, 117);
+            this.playButton.Location = new System.Drawing.Point(189, 117);
             this.playButton.Name = "playButton";
-            this.playButton.Size = new System.Drawing.Size(63, 23);
+            this.playButton.Size = new System.Drawing.Size(55, 23);
             this.playButton.TabIndex = 10;
             this.playButton.Text = "Play";
             this.playButton.UseVisualStyleBackColor = true;
@@ -73,16 +155,6 @@
             this.pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox.TabIndex = 47;
             this.pictureBox.TabStop = false;
-            // 
-            // editButton
-            // 
-            editButton.Location = new System.Drawing.Point(115, 117);
-            editButton.Name = "editButton";
-            editButton.Size = new System.Drawing.Size(63, 23);
-            editButton.TabIndex = 9;
-            editButton.Text = "Edit";
-            editButton.UseVisualStyleBackColor = true;
-            editButton.Click += new System.EventHandler(this.EditButton_Click);
             // 
             // fpsNumericUpDown
             // 
@@ -117,16 +189,6 @@
             this.sourceTextBox.Size = new System.Drawing.Size(200, 20);
             this.sourceTextBox.TabIndex = 3;
             // 
-            // addButton
-            // 
-            addButton.Location = new System.Drawing.Point(46, 117);
-            addButton.Name = "addButton";
-            addButton.Size = new System.Drawing.Size(63, 23);
-            addButton.TabIndex = 8;
-            addButton.Text = "Add";
-            addButton.UseVisualStyleBackColor = true;
-            addButton.Click += new System.EventHandler(this.AddButton_Click);
-            // 
             // reverseCheckBox
             // 
             this.reverseCheckBox.AutoSize = true;
@@ -137,16 +199,6 @@
             this.reverseCheckBox.TabIndex = 6;
             this.reverseCheckBox.Text = "Reverse";
             this.reverseCheckBox.UseVisualStyleBackColor = true;
-            // 
-            // removeButton
-            // 
-            removeButton.Location = new System.Drawing.Point(253, 117);
-            removeButton.Name = "removeButton";
-            removeButton.Size = new System.Drawing.Size(63, 23);
-            removeButton.TabIndex = 11;
-            removeButton.Text = "Remove";
-            removeButton.UseVisualStyleBackColor = true;
-            removeButton.Click += new System.EventHandler(this.RemoveButton_Click);
             // 
             // nameTextBox
             // 
@@ -166,34 +218,6 @@
             this.reflectedCheckBox.Text = "Reflected";
             this.reflectedCheckBox.UseVisualStyleBackColor = true;
             // 
-            // browseButton
-            // 
-            browseButton.Location = new System.Drawing.Point(209, 214);
-            browseButton.Name = "browseButton";
-            browseButton.Size = new System.Drawing.Size(57, 23);
-            browseButton.TabIndex = 4;
-            browseButton.Text = "Browse";
-            browseButton.UseVisualStyleBackColor = true;
-            browseButton.Click += new System.EventHandler(this.BrowseButton_Click);
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new System.Drawing.Point(0, 161);
-            label1.Name = "label1";
-            label1.Size = new System.Drawing.Size(38, 13);
-            label1.TabIndex = 39;
-            label1.Text = "Name:";
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Location = new System.Drawing.Point(0, 200);
-            label2.Name = "label2";
-            label2.Size = new System.Drawing.Size(44, 13);
-            label2.TabIndex = 42;
-            label2.Text = "Source:";
-            // 
             // fpsLabel
             // 
             this.fpsLabel.AutoSize = true;
@@ -207,6 +231,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(clearAllButton);
+            this.Controls.Add(addAllButton);
             this.Controls.Add(this.playButton);
             this.Controls.Add(this.pictureBox);
             this.Controls.Add(editButton);

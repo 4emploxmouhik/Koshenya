@@ -24,11 +24,16 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
+    <SupportUrl>https://github.com/4emploxmouhik/Koshenya/issues</SupportUrl>
     <ProductName>Koshenya</ProductName>
     <PublisherName>4empploxmouhik</PublisherName>
-    <ApplicationRevision>0</ApplicationRevision>
-    <ApplicationVersion>1.0.0.0</ApplicationVersion>
-    <UseApplicationTrust>false</UseApplicationTrust>
+    <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
+    <WebPage>publish.htm</WebPage>
+    <ApplicationRevision>2</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>true</UseApplicationTrust>
+    <CreateDesktopShortcut>true</CreateDesktopShortcut>
+    <ExcludeDeploymentUrl>true</ExcludeDeploymentUrl>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -45,13 +50,13 @@
     </DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
+    <PlatformTarget>x64</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
+    <WarningLevel>5</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationIcon>Koshenya.ico</ApplicationIcon>
@@ -223,9 +228,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <None Include="Assets\Cat\Cats Download.zip" />
-    <None Include="Assets\Fox\Fox_Idle.rar" />
-    <None Include="Assets\Fox\Fox_Walk.rar" />
+    <Content Include="Assets\Tosha\.conf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <None Include="CoreClassDiagram.cd" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -241,481 +246,360 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Assets\Cat\Animations\Brown\blink\1.png" />
-    <Content Include="Assets\Cat\Animations\Brown\blink\2.png" />
-    <Content Include="Assets\Cat\Animations\Brown\blink\3.png" />
-    <Content Include="Assets\Cat\Animations\Brown\blink\4.png" />
-    <Content Include="Assets\Cat\Animations\Brown\blink\5.png" />
-    <Content Include="Assets\Cat\Animations\Brown\dragging-sleep\1.png" />
-    <Content Include="Assets\Cat\Animations\Brown\dragging-sleep\2.png" />
-    <Content Include="Assets\Cat\Animations\Brown\dragging-sleep\3.png" />
-    <Content Include="Assets\Cat\Animations\Brown\dragging-sleep\4.png" />
-    <Content Include="Assets\Cat\Animations\Brown\dragging\1.png" />
-    <Content Include="Assets\Cat\Animations\Brown\hisses\1.png" />
-    <Content Include="Assets\Cat\Animations\Brown\hisses\2.png" />
-    <Content Include="Assets\Cat\Animations\Brown\hisses\3.png" />
-    <Content Include="Assets\Cat\Animations\Brown\hisses\4.png" />
-    <Content Include="Assets\Cat\Animations\Brown\hisses\5.png" />
-    <Content Include="Assets\Cat\Animations\Brown\hisses\6.png" />
-    <Content Include="Assets\Cat\Animations\Brown\hisses\7.png" />
-    <Content Include="Assets\Cat\Animations\Brown\hisses\8.png" />
-    <Content Include="Assets\Cat\Animations\Brown\hisses\9.png" />
-    <Content Include="Assets\Cat\Animations\Brown\idle\1.png" />
-    <Content Include="Assets\Cat\Animations\Brown\laydown\1.png" />
-    <Content Include="Assets\Cat\Animations\Brown\laydown\2.png" />
-    <Content Include="Assets\Cat\Animations\Brown\laydown\3.png" />
-    <Content Include="Assets\Cat\Animations\Brown\laydown\4.png" />
-    <Content Include="Assets\Cat\Animations\Brown\laydown\5.png" />
-    <Content Include="Assets\Cat\Animations\Brown\laydown\6.png" />
-    <Content Include="Assets\Cat\Animations\Brown\laydown\7.png" />
-    <Content Include="Assets\Cat\Animations\Brown\laydown\8.png" />
-    <Content Include="Assets\Cat\Animations\Brown\laydown\9.png" />
-    <Content Include="Assets\Cat\Animations\Brown\look-around\1.png" />
-    <Content Include="Assets\Cat\Animations\Brown\look-around\2.png" />
-    <Content Include="Assets\Cat\Animations\Brown\look-around\3.png" />
-    <Content Include="Assets\Cat\Animations\Brown\look-around\4.png" />
-    <Content Include="Assets\Cat\Animations\Brown\look-around\5.png" />
-    <Content Include="Assets\Cat\Animations\Brown\look-around\6.png" />
-    <Content Include="Assets\Cat\Animations\Brown\look-around\7.png" />
-    <Content Include="Assets\Cat\Animations\Brown\look-around\8.png" />
-    <Content Include="Assets\Cat\Animations\Brown\meow\1.png" />
-    <Content Include="Assets\Cat\Animations\Brown\meow\2.png" />
-    <Content Include="Assets\Cat\Animations\Brown\meow\3.png" />
-    <Content Include="Assets\Cat\Animations\Brown\meow\4.png" />
-    <Content Include="Assets\Cat\Animations\Brown\meow\5.png" />
-    <Content Include="Assets\Cat\Animations\Brown\run\nw\1.png" />
-    <Content Include="Assets\Cat\Animations\Brown\run\nw\2.png" />
-    <Content Include="Assets\Cat\Animations\Brown\run\nw\3.png" />
-    <Content Include="Assets\Cat\Animations\Brown\run\nw\4.png" />
-    <Content Include="Assets\Cat\Animations\Brown\run\nw\5.png" />
-    <Content Include="Assets\Cat\Animations\Brown\run\nw\6.png" />
-    <Content Include="Assets\Cat\Animations\Brown\run\nw\7.png" />
-    <Content Include="Assets\Cat\Animations\Brown\run\nw\8.png" />
-    <Content Include="Assets\Cat\Animations\Brown\run\n\1.png" />
-    <Content Include="Assets\Cat\Animations\Brown\run\n\2.png" />
-    <Content Include="Assets\Cat\Animations\Brown\run\n\3.png" />
-    <Content Include="Assets\Cat\Animations\Brown\run\n\4.png" />
-    <Content Include="Assets\Cat\Animations\Brown\run\n\5.png" />
-    <Content Include="Assets\Cat\Animations\Brown\run\n\6.png" />
-    <Content Include="Assets\Cat\Animations\Brown\run\n\7.png" />
-    <Content Include="Assets\Cat\Animations\Brown\run\n\8.png" />
-    <Content Include="Assets\Cat\Animations\Brown\run\sw\1.png" />
-    <Content Include="Assets\Cat\Animations\Brown\run\sw\2.png" />
-    <Content Include="Assets\Cat\Animations\Brown\run\sw\3.png" />
-    <Content Include="Assets\Cat\Animations\Brown\run\sw\4.png" />
-    <Content Include="Assets\Cat\Animations\Brown\run\sw\5.png" />
-    <Content Include="Assets\Cat\Animations\Brown\run\sw\6.png" />
-    <Content Include="Assets\Cat\Animations\Brown\run\sw\7.png" />
-    <Content Include="Assets\Cat\Animations\Brown\run\sw\8.png" />
-    <Content Include="Assets\Cat\Animations\Brown\run\s\1.png" />
-    <Content Include="Assets\Cat\Animations\Brown\run\s\2.png" />
-    <Content Include="Assets\Cat\Animations\Brown\run\s\3.png" />
-    <Content Include="Assets\Cat\Animations\Brown\run\s\4.png" />
-    <Content Include="Assets\Cat\Animations\Brown\run\s\5.png" />
-    <Content Include="Assets\Cat\Animations\Brown\run\s\6.png" />
-    <Content Include="Assets\Cat\Animations\Brown\run\s\7.png" />
-    <Content Include="Assets\Cat\Animations\Brown\run\s\8.png" />
-    <Content Include="Assets\Cat\Animations\Brown\run\w\1.png" />
-    <Content Include="Assets\Cat\Animations\Brown\run\w\2.png" />
-    <Content Include="Assets\Cat\Animations\Brown\run\w\3.png" />
-    <Content Include="Assets\Cat\Animations\Brown\run\w\4.png" />
-    <Content Include="Assets\Cat\Animations\Brown\run\w\5.png" />
-    <Content Include="Assets\Cat\Animations\Brown\run\w\6.png" />
-    <Content Include="Assets\Cat\Animations\Brown\run\w\7.png" />
-    <Content Include="Assets\Cat\Animations\Brown\run\w\8.png" />
-    <Content Include="Assets\Cat\Animations\Brown\sleep\1.png" />
-    <Content Include="Assets\Cat\Animations\Brown\sleep\2.png" />
-    <Content Include="Assets\Cat\Animations\Brown\sleep\3.png" />
-    <Content Include="Assets\Cat\Animations\Brown\sleep\4.png" />
-    <Content Include="Assets\Cat\Animations\Brown\walk\nw\1.png" />
-    <Content Include="Assets\Cat\Animations\Brown\walk\nw\2.png" />
-    <Content Include="Assets\Cat\Animations\Brown\walk\nw\3.png" />
-    <Content Include="Assets\Cat\Animations\Brown\walk\nw\4.png" />
-    <Content Include="Assets\Cat\Animations\Brown\walk\n\1.png" />
-    <Content Include="Assets\Cat\Animations\Brown\walk\n\2.png" />
-    <Content Include="Assets\Cat\Animations\Brown\walk\n\3.png" />
-    <Content Include="Assets\Cat\Animations\Brown\walk\n\4.png" />
-    <Content Include="Assets\Cat\Animations\Brown\walk\sw\1.png" />
-    <Content Include="Assets\Cat\Animations\Brown\walk\sw\2.png" />
-    <Content Include="Assets\Cat\Animations\Brown\walk\sw\3.png" />
-    <Content Include="Assets\Cat\Animations\Brown\walk\sw\4.png" />
-    <Content Include="Assets\Cat\Animations\Brown\walk\s\1.png" />
-    <Content Include="Assets\Cat\Animations\Brown\walk\s\2.png" />
-    <Content Include="Assets\Cat\Animations\Brown\walk\s\3.png" />
-    <Content Include="Assets\Cat\Animations\Brown\walk\s\4.png" />
-    <Content Include="Assets\Cat\Animations\Brown\walk\w\1.png" />
-    <Content Include="Assets\Cat\Animations\Brown\walk\w\2.png" />
-    <Content Include="Assets\Cat\Animations\Brown\walk\w\3.png" />
-    <Content Include="Assets\Cat\Animations\Brown\walk\w\4.png" />
-    <Content Include="Assets\Cat\Animations\brown_palette.bmp" />
-    <Content Include="Assets\Cat\Animations\Grey\blink\1.png" />
-    <Content Include="Assets\Cat\Animations\Grey\blink\2.png" />
-    <Content Include="Assets\Cat\Animations\Grey\blink\3.png" />
-    <Content Include="Assets\Cat\Animations\Grey\blink\4.png" />
-    <Content Include="Assets\Cat\Animations\Grey\blink\5.png" />
-    <Content Include="Assets\Cat\Animations\Grey\dragging-sleep\1.png" />
-    <Content Include="Assets\Cat\Animations\Grey\dragging-sleep\2.png" />
-    <Content Include="Assets\Cat\Animations\Grey\dragging-sleep\3.png" />
-    <Content Include="Assets\Cat\Animations\Grey\dragging-sleep\4.png" />
-    <Content Include="Assets\Cat\Animations\Grey\dragging\1.png" />
-    <Content Include="Assets\Cat\Animations\Grey\hisses\1.png" />
-    <Content Include="Assets\Cat\Animations\Grey\hisses\2.png" />
-    <Content Include="Assets\Cat\Animations\Grey\hisses\3.png" />
-    <Content Include="Assets\Cat\Animations\Grey\hisses\4.png" />
-    <Content Include="Assets\Cat\Animations\Grey\hisses\5.png" />
-    <Content Include="Assets\Cat\Animations\Grey\hisses\6.png" />
-    <Content Include="Assets\Cat\Animations\Grey\hisses\7.png" />
-    <Content Include="Assets\Cat\Animations\Grey\hisses\8.png" />
-    <Content Include="Assets\Cat\Animations\Grey\hisses\9.png" />
-    <Content Include="Assets\Cat\Animations\Grey\idle\1.png" />
-    <Content Include="Assets\Cat\Animations\Grey\laydown\1.png" />
-    <Content Include="Assets\Cat\Animations\Grey\laydown\2.png" />
-    <Content Include="Assets\Cat\Animations\Grey\laydown\3.png" />
-    <Content Include="Assets\Cat\Animations\Grey\laydown\4.png" />
-    <Content Include="Assets\Cat\Animations\Grey\laydown\5.png" />
-    <Content Include="Assets\Cat\Animations\Grey\laydown\6.png" />
-    <Content Include="Assets\Cat\Animations\Grey\laydown\7.png" />
-    <Content Include="Assets\Cat\Animations\Grey\laydown\8.png" />
-    <Content Include="Assets\Cat\Animations\Grey\laydown\9.png" />
-    <Content Include="Assets\Cat\Animations\Grey\look-around\1.png" />
-    <Content Include="Assets\Cat\Animations\Grey\look-around\2.png" />
-    <Content Include="Assets\Cat\Animations\Grey\look-around\3.png" />
-    <Content Include="Assets\Cat\Animations\Grey\look-around\4.png" />
-    <Content Include="Assets\Cat\Animations\Grey\look-around\5.png" />
-    <Content Include="Assets\Cat\Animations\Grey\look-around\6.png" />
-    <Content Include="Assets\Cat\Animations\Grey\look-around\7.png" />
-    <Content Include="Assets\Cat\Animations\Grey\look-around\8.png" />
-    <Content Include="Assets\Cat\Animations\Grey\meow\1.png" />
-    <Content Include="Assets\Cat\Animations\Grey\meow\2.png" />
-    <Content Include="Assets\Cat\Animations\Grey\meow\3.png" />
-    <Content Include="Assets\Cat\Animations\Grey\meow\4.png" />
-    <Content Include="Assets\Cat\Animations\Grey\meow\5.png" />
-    <Content Include="Assets\Cat\Animations\Grey\run\nw\1.png" />
-    <Content Include="Assets\Cat\Animations\Grey\run\nw\2.png" />
-    <Content Include="Assets\Cat\Animations\Grey\run\nw\3.png" />
-    <Content Include="Assets\Cat\Animations\Grey\run\nw\4.png" />
-    <Content Include="Assets\Cat\Animations\Grey\run\nw\5.png" />
-    <Content Include="Assets\Cat\Animations\Grey\run\nw\6.png" />
-    <Content Include="Assets\Cat\Animations\Grey\run\nw\7.png" />
-    <Content Include="Assets\Cat\Animations\Grey\run\nw\8.png" />
-    <Content Include="Assets\Cat\Animations\Grey\run\n\1.png" />
-    <Content Include="Assets\Cat\Animations\Grey\run\n\2.png" />
-    <Content Include="Assets\Cat\Animations\Grey\run\n\3.png" />
-    <Content Include="Assets\Cat\Animations\Grey\run\n\4.png" />
-    <Content Include="Assets\Cat\Animations\Grey\run\n\5.png" />
-    <Content Include="Assets\Cat\Animations\Grey\run\n\6.png" />
-    <Content Include="Assets\Cat\Animations\Grey\run\n\7.png" />
-    <Content Include="Assets\Cat\Animations\Grey\run\n\8.png" />
-    <Content Include="Assets\Cat\Animations\Grey\run\sw\1.png" />
-    <Content Include="Assets\Cat\Animations\Grey\run\sw\2.png" />
-    <Content Include="Assets\Cat\Animations\Grey\run\sw\3.png" />
-    <Content Include="Assets\Cat\Animations\Grey\run\sw\4.png" />
-    <Content Include="Assets\Cat\Animations\Grey\run\sw\5.png" />
-    <Content Include="Assets\Cat\Animations\Grey\run\sw\6.png" />
-    <Content Include="Assets\Cat\Animations\Grey\run\sw\7.png" />
-    <Content Include="Assets\Cat\Animations\Grey\run\sw\8.png" />
-    <Content Include="Assets\Cat\Animations\Grey\run\s\1.png" />
-    <Content Include="Assets\Cat\Animations\Grey\run\s\2.png" />
-    <Content Include="Assets\Cat\Animations\Grey\run\s\3.png" />
-    <Content Include="Assets\Cat\Animations\Grey\run\s\4.png" />
-    <Content Include="Assets\Cat\Animations\Grey\run\s\5.png" />
-    <Content Include="Assets\Cat\Animations\Grey\run\s\6.png" />
-    <Content Include="Assets\Cat\Animations\Grey\run\s\7.png" />
-    <Content Include="Assets\Cat\Animations\Grey\run\s\8.png" />
-    <Content Include="Assets\Cat\Animations\Grey\run\w\1.png" />
-    <Content Include="Assets\Cat\Animations\Grey\run\w\2.png" />
-    <Content Include="Assets\Cat\Animations\Grey\run\w\3.png" />
-    <Content Include="Assets\Cat\Animations\Grey\run\w\4.png" />
-    <Content Include="Assets\Cat\Animations\Grey\run\w\5.png" />
-    <Content Include="Assets\Cat\Animations\Grey\run\w\6.png" />
-    <Content Include="Assets\Cat\Animations\Grey\run\w\7.png" />
-    <Content Include="Assets\Cat\Animations\Grey\run\w\8.png" />
-    <Content Include="Assets\Cat\Animations\Grey\sleep\1.png" />
-    <Content Include="Assets\Cat\Animations\Grey\sleep\2.png" />
-    <Content Include="Assets\Cat\Animations\Grey\sleep\3.png" />
-    <Content Include="Assets\Cat\Animations\Grey\sleep\4.png" />
-    <Content Include="Assets\Cat\Animations\Grey\walk\nw\1.png" />
-    <Content Include="Assets\Cat\Animations\Grey\walk\nw\2.png" />
-    <Content Include="Assets\Cat\Animations\Grey\walk\nw\3.png" />
-    <Content Include="Assets\Cat\Animations\Grey\walk\nw\4.png" />
-    <Content Include="Assets\Cat\Animations\Grey\walk\n\1.png" />
-    <Content Include="Assets\Cat\Animations\Grey\walk\n\2.png" />
-    <Content Include="Assets\Cat\Animations\Grey\walk\n\3.png" />
-    <Content Include="Assets\Cat\Animations\Grey\walk\n\4.png" />
-    <Content Include="Assets\Cat\Animations\Grey\walk\sw\1.png" />
-    <Content Include="Assets\Cat\Animations\Grey\walk\sw\2.png" />
-    <Content Include="Assets\Cat\Animations\Grey\walk\sw\3.png" />
-    <Content Include="Assets\Cat\Animations\Grey\walk\sw\4.png" />
-    <Content Include="Assets\Cat\Animations\Grey\walk\s\1.png" />
-    <Content Include="Assets\Cat\Animations\Grey\walk\s\2.png" />
-    <Content Include="Assets\Cat\Animations\Grey\walk\s\3.png" />
-    <Content Include="Assets\Cat\Animations\Grey\walk\s\4.png" />
-    <Content Include="Assets\Cat\Animations\Grey\walk\w\1.png" />
-    <Content Include="Assets\Cat\Animations\Grey\walk\w\2.png" />
-    <Content Include="Assets\Cat\Animations\Grey\walk\w\3.png" />
-    <Content Include="Assets\Cat\Animations\Grey\walk\w\4.png" />
-    <Content Include="Assets\Cat\Animations\grey_palette.bmp" />
-    <Content Include="Assets\Cat\Animations\original_spite-sheet.png" />
-    <Content Include="Assets\Cat\Reference\black_0.png" />
-    <Content Include="Assets\Cat\Reference\black_1.png" />
-    <Content Include="Assets\Cat\Reference\black_2.png" />
-    <Content Include="Assets\Cat\Reference\black_3.png" />
-    <Content Include="Assets\Cat\Reference\black_4.png" />
-    <Content Include="Assets\Cat\Reference\blue_0.png" />
-    <Content Include="Assets\Cat\Reference\blue_1.png" />
-    <Content Include="Assets\Cat\Reference\blue_2.png" />
-    <Content Include="Assets\Cat\Reference\blue_3.png" />
-    <Content Include="Assets\Cat\Reference\brown_0.png" />
-    <Content Include="Assets\Cat\Reference\brown_1.png" />
-    <Content Include="Assets\Cat\Reference\brown_2.png" />
-    <Content Include="Assets\Cat\Reference\brown_3.png" />
-    <Content Include="Assets\Cat\Reference\brown_4.png" />
-    <Content Include="Assets\Cat\Reference\brown_5.png" />
-    <Content Include="Assets\Cat\Reference\brown_6.png" />
-    <Content Include="Assets\Cat\Reference\brown_7.png" />
-    <Content Include="Assets\Cat\Reference\brown_8.png" />
-    <Content Include="Assets\Cat\Reference\calico_0.png" />
-    <Content Include="Assets\Cat\Reference\cotton_candy_blue_0.png" />
-    <Content Include="Assets\Cat\Reference\cotton_candy_pink_0.png" />
-    <Content Include="Assets\Cat\Reference\creme_0.png" />
-    <Content Include="Assets\Cat\Reference\creme_1.png" />
-    <Content Include="Assets\Cat\Reference\dark_0.png" />
-    <Content Include="Assets\Cat\Reference\game_boy_0.png" />
-    <Content Include="Assets\Cat\Reference\game_boy_1.png" />
-    <Content Include="Assets\Cat\Reference\game_boy_2.png" />
-    <Content Include="Assets\Cat\Reference\ghost_0.png" />
-    <Content Include="Assets\Cat\Reference\gold_0.png" />
-    <Content Include="Assets\Cat\Reference\grey_0.png" />
-    <Content Include="Assets\Cat\Reference\grey_1.png" />
-    <Content Include="Assets\Cat\Reference\grey_2.png" />
-    <Content Include="Assets\Cat\Reference\hairless_0.png" />
-    <Content Include="Assets\Cat\Reference\hairless_1.png" />
-    <Content Include="Assets\Cat\Reference\indigo_0.png" />
-    <Content Include="Assets\Cat\Reference\Markings\Back Left Foot 000.png" />
-    <Content Include="Assets\Cat\Reference\Markings\Back Left Foot 001.png" />
-    <Content Include="Assets\Cat\Reference\Markings\Back Right Foot 000.png" />
-    <Content Include="Assets\Cat\Reference\Markings\Back Right Foot 001.png" />
-    <Content Include="Assets\Cat\Reference\Markings\Ears 000.png" />
-    <Content Include="Assets\Cat\Reference\Markings\Face Marking 000.png" />
-    <Content Include="Assets\Cat\Reference\Markings\Feet 000.png" />
-    <Content Include="Assets\Cat\Reference\Markings\Front Left Foot 000.png" />
-    <Content Include="Assets\Cat\Reference\Markings\Front Left Foot 001.png" />
-    <Content Include="Assets\Cat\Reference\Markings\Front Right Foot 000.png" />
-    <Content Include="Assets\Cat\Reference\Markings\Left Ear 000.png" />
-    <Content Include="Assets\Cat\Reference\Markings\Right Ear 000.png" />
-    <Content Include="Assets\Cat\Reference\Markings\Tabby Markings 000.png" />
-    <Content Include="Assets\Cat\Reference\Markings\Tail 000.png" />
-    <Content Include="Assets\Cat\Reference\orange_0.png" />
-    <Content Include="Assets\Cat\Reference\orange_1.png" />
-    <Content Include="Assets\Cat\Reference\orange_2.png" />
-    <Content Include="Assets\Cat\Reference\orange_3.png" />
-    <Content Include="Assets\Cat\Reference\peach_0.png" />
-    <Content Include="Assets\Cat\Reference\pink_0.png" />
-    <Content Include="Assets\Cat\Reference\radioactive_0.png" />
-    <Content Include="Assets\Cat\Reference\red_0.png" />
-    <Content Include="Assets\Cat\Reference\red_1.png" />
-    <Content Include="Assets\Cat\Reference\seal_point_0.png" />
-    <Content Include="Assets\Cat\Reference\teal_0.png" />
-    <Content Include="Assets\Cat\Reference\white_0.png" />
-    <Content Include="Assets\Cat\Reference\white_grey_0.png" />
-    <Content Include="Assets\Cat\Reference\white_grey_1.png" />
-    <Content Include="Assets\Cat\Reference\yellow_0.png" />
-    <Content Include="Assets\Cat\Sounds\hisses.wav" />
-    <Content Include="Assets\Cat\Sounds\meow.wav" />
-    <Content Include="Assets\Cat\Sounds\purring.wav" />
-    <Content Include="Assets\Fox\Animations\idle\130px\1.png" />
-    <Content Include="Assets\Fox\Animations\idle\130px\10.png" />
-    <Content Include="Assets\Fox\Animations\idle\130px\11.png" />
-    <Content Include="Assets\Fox\Animations\idle\130px\12.png" />
-    <Content Include="Assets\Fox\Animations\idle\130px\13.png" />
-    <Content Include="Assets\Fox\Animations\idle\130px\14.png" />
-    <Content Include="Assets\Fox\Animations\idle\130px\15.png" />
-    <Content Include="Assets\Fox\Animations\idle\130px\16.png" />
-    <Content Include="Assets\Fox\Animations\idle\130px\17.png" />
-    <Content Include="Assets\Fox\Animations\idle\130px\18.png" />
-    <Content Include="Assets\Fox\Animations\idle\130px\19.png" />
-    <Content Include="Assets\Fox\Animations\idle\130px\2.png" />
-    <Content Include="Assets\Fox\Animations\idle\130px\20.png" />
-    <Content Include="Assets\Fox\Animations\idle\130px\3.png" />
-    <Content Include="Assets\Fox\Animations\idle\130px\4.png" />
-    <Content Include="Assets\Fox\Animations\idle\130px\5.png" />
-    <Content Include="Assets\Fox\Animations\idle\130px\6.png" />
-    <Content Include="Assets\Fox\Animations\idle\130px\7.png" />
-    <Content Include="Assets\Fox\Animations\idle\130px\8.png" />
-    <Content Include="Assets\Fox\Animations\idle\130px\9.png" />
-    <Content Include="Assets\Fox\Animations\idle\64px\1.png" />
-    <Content Include="Assets\Fox\Animations\idle\64px\10.png" />
-    <Content Include="Assets\Fox\Animations\idle\64px\11.png" />
-    <Content Include="Assets\Fox\Animations\idle\64px\12.png" />
-    <Content Include="Assets\Fox\Animations\idle\64px\13.png" />
-    <Content Include="Assets\Fox\Animations\idle\64px\14.png" />
-    <Content Include="Assets\Fox\Animations\idle\64px\15.png" />
-    <Content Include="Assets\Fox\Animations\idle\64px\16.png" />
-    <Content Include="Assets\Fox\Animations\idle\64px\17.png" />
-    <Content Include="Assets\Fox\Animations\idle\64px\18.png" />
-    <Content Include="Assets\Fox\Animations\idle\64px\19.png" />
-    <Content Include="Assets\Fox\Animations\idle\64px\2.png" />
-    <Content Include="Assets\Fox\Animations\idle\64px\20.png" />
-    <Content Include="Assets\Fox\Animations\idle\64px\3.png" />
-    <Content Include="Assets\Fox\Animations\idle\64px\4.png" />
-    <Content Include="Assets\Fox\Animations\idle\64px\5.png" />
-    <Content Include="Assets\Fox\Animations\idle\64px\6.png" />
-    <Content Include="Assets\Fox\Animations\idle\64px\7.png" />
-    <Content Include="Assets\Fox\Animations\idle\64px\8.png" />
-    <Content Include="Assets\Fox\Animations\idle\64px\9.png" />
-    <Content Include="Assets\Fox\Animations\idle\Fox_Idle_dir8.png" />
-    <Content Include="Assets\Fox\Animations\move\e\Fox_Walk_dir6.png" />
-    <Content Include="Assets\Fox\Animations\move\ne\Fox_Walk_dir5.png" />
-    <Content Include="Assets\Fox\Animations\move\nw\130px\1.png" />
-    <Content Include="Assets\Fox\Animations\move\nw\130px\10.png" />
-    <Content Include="Assets\Fox\Animations\move\nw\130px\11.png" />
-    <Content Include="Assets\Fox\Animations\move\nw\130px\12.png" />
-    <Content Include="Assets\Fox\Animations\move\nw\130px\2.png" />
-    <Content Include="Assets\Fox\Animations\move\nw\130px\3.png" />
-    <Content Include="Assets\Fox\Animations\move\nw\130px\4.png" />
-    <Content Include="Assets\Fox\Animations\move\nw\130px\5.png" />
-    <Content Include="Assets\Fox\Animations\move\nw\130px\6.png" />
-    <Content Include="Assets\Fox\Animations\move\nw\130px\7.png" />
-    <Content Include="Assets\Fox\Animations\move\nw\130px\8.png" />
-    <Content Include="Assets\Fox\Animations\move\nw\130px\9.png" />
-    <Content Include="Assets\Fox\Animations\move\nw\64px\1.png" />
-    <Content Include="Assets\Fox\Animations\move\nw\64px\10.png" />
-    <Content Include="Assets\Fox\Animations\move\nw\64px\11.png" />
-    <Content Include="Assets\Fox\Animations\move\nw\64px\12.png" />
-    <Content Include="Assets\Fox\Animations\move\nw\64px\2.png" />
-    <Content Include="Assets\Fox\Animations\move\nw\64px\3.png" />
-    <Content Include="Assets\Fox\Animations\move\nw\64px\4.png" />
-    <Content Include="Assets\Fox\Animations\move\nw\64px\5.png" />
-    <Content Include="Assets\Fox\Animations\move\nw\64px\6.png" />
-    <Content Include="Assets\Fox\Animations\move\nw\64px\7.png" />
-    <Content Include="Assets\Fox\Animations\move\nw\64px\8.png" />
-    <Content Include="Assets\Fox\Animations\move\nw\64px\9.png" />
-    <Content Include="Assets\Fox\Animations\move\nw\Fox_Walk_dir3.png" />
-    <Content Include="Assets\Fox\Animations\move\n\130px\1.png" />
-    <Content Include="Assets\Fox\Animations\move\n\130px\10.png" />
-    <Content Include="Assets\Fox\Animations\move\n\130px\11.png" />
-    <Content Include="Assets\Fox\Animations\move\n\130px\12.png" />
-    <Content Include="Assets\Fox\Animations\move\n\130px\2.png" />
-    <Content Include="Assets\Fox\Animations\move\n\130px\3.png" />
-    <Content Include="Assets\Fox\Animations\move\n\130px\4.png" />
-    <Content Include="Assets\Fox\Animations\move\n\130px\5.png" />
-    <Content Include="Assets\Fox\Animations\move\n\130px\6.png" />
-    <Content Include="Assets\Fox\Animations\move\n\130px\7.png" />
-    <Content Include="Assets\Fox\Animations\move\n\130px\8.png" />
-    <Content Include="Assets\Fox\Animations\move\n\130px\9.png" />
-    <Content Include="Assets\Fox\Animations\move\n\64px\1.png" />
-    <Content Include="Assets\Fox\Animations\move\n\64px\10.png" />
-    <Content Include="Assets\Fox\Animations\move\n\64px\11.png" />
-    <Content Include="Assets\Fox\Animations\move\n\64px\12.png" />
-    <Content Include="Assets\Fox\Animations\move\n\64px\2.png" />
-    <Content Include="Assets\Fox\Animations\move\n\64px\3.png" />
-    <Content Include="Assets\Fox\Animations\move\n\64px\4.png" />
-    <Content Include="Assets\Fox\Animations\move\n\64px\5.png" />
-    <Content Include="Assets\Fox\Animations\move\n\64px\6.png" />
-    <Content Include="Assets\Fox\Animations\move\n\64px\7.png" />
-    <Content Include="Assets\Fox\Animations\move\n\64px\8.png" />
-    <Content Include="Assets\Fox\Animations\move\n\64px\9.png" />
-    <Content Include="Assets\Fox\Animations\move\n\Fox_Walk_dir4.png" />
-    <Content Include="Assets\Fox\Animations\move\se\Fox_Walk_dir7.png" />
-    <Content Include="Assets\Fox\Animations\move\sw\130px\1.png" />
-    <Content Include="Assets\Fox\Animations\move\sw\130px\10.png" />
-    <Content Include="Assets\Fox\Animations\move\sw\130px\11.png" />
-    <Content Include="Assets\Fox\Animations\move\sw\130px\12.png" />
-    <Content Include="Assets\Fox\Animations\move\sw\130px\2.png" />
-    <Content Include="Assets\Fox\Animations\move\sw\130px\3.png" />
-    <Content Include="Assets\Fox\Animations\move\sw\130px\4.png" />
-    <Content Include="Assets\Fox\Animations\move\sw\130px\5.png" />
-    <Content Include="Assets\Fox\Animations\move\sw\130px\6.png" />
-    <Content Include="Assets\Fox\Animations\move\sw\130px\7.png" />
-    <Content Include="Assets\Fox\Animations\move\sw\130px\8.png" />
-    <Content Include="Assets\Fox\Animations\move\sw\130px\9.png" />
-    <Content Include="Assets\Fox\Animations\move\sw\64px\1.png" />
-    <Content Include="Assets\Fox\Animations\move\sw\64px\10.png" />
-    <Content Include="Assets\Fox\Animations\move\sw\64px\11.png" />
-    <Content Include="Assets\Fox\Animations\move\sw\64px\12.png" />
-    <Content Include="Assets\Fox\Animations\move\sw\64px\2.png" />
-    <Content Include="Assets\Fox\Animations\move\sw\64px\3.png" />
-    <Content Include="Assets\Fox\Animations\move\sw\64px\4.png" />
-    <Content Include="Assets\Fox\Animations\move\sw\64px\5.png" />
-    <Content Include="Assets\Fox\Animations\move\sw\64px\6.png" />
-    <Content Include="Assets\Fox\Animations\move\sw\64px\7.png" />
-    <Content Include="Assets\Fox\Animations\move\sw\64px\8.png" />
-    <Content Include="Assets\Fox\Animations\move\sw\64px\9.png" />
-    <Content Include="Assets\Fox\Animations\move\sw\Fox_Walk_dir1.png" />
-    <Content Include="Assets\Fox\Animations\move\s\130px\1.png" />
-    <Content Include="Assets\Fox\Animations\move\s\130px\10.png" />
-    <Content Include="Assets\Fox\Animations\move\s\130px\11.png" />
-    <Content Include="Assets\Fox\Animations\move\s\130px\12.png" />
-    <Content Include="Assets\Fox\Animations\move\s\130px\2.png" />
-    <Content Include="Assets\Fox\Animations\move\s\130px\3.png" />
-    <Content Include="Assets\Fox\Animations\move\s\130px\4.png" />
-    <Content Include="Assets\Fox\Animations\move\s\130px\5.png" />
-    <Content Include="Assets\Fox\Animations\move\s\130px\6.png" />
-    <Content Include="Assets\Fox\Animations\move\s\130px\7.png" />
-    <Content Include="Assets\Fox\Animations\move\s\130px\8.png" />
-    <Content Include="Assets\Fox\Animations\move\s\130px\9.png" />
-    <Content Include="Assets\Fox\Animations\move\s\64px\1.png" />
-    <Content Include="Assets\Fox\Animations\move\s\64px\10.png" />
-    <Content Include="Assets\Fox\Animations\move\s\64px\11.png" />
-    <Content Include="Assets\Fox\Animations\move\s\64px\12.png" />
-    <Content Include="Assets\Fox\Animations\move\s\64px\2.png" />
-    <Content Include="Assets\Fox\Animations\move\s\64px\3.png" />
-    <Content Include="Assets\Fox\Animations\move\s\64px\4.png" />
-    <Content Include="Assets\Fox\Animations\move\s\64px\5.png" />
-    <Content Include="Assets\Fox\Animations\move\s\64px\6.png" />
-    <Content Include="Assets\Fox\Animations\move\s\64px\7.png" />
-    <Content Include="Assets\Fox\Animations\move\s\64px\8.png" />
-    <Content Include="Assets\Fox\Animations\move\s\64px\9.png" />
-    <Content Include="Assets\Fox\Animations\move\s\Fox_Walk_dir8.png" />
-    <Content Include="Assets\Fox\Animations\move\w\130px\1.png" />
-    <Content Include="Assets\Fox\Animations\move\w\130px\10.png" />
-    <Content Include="Assets\Fox\Animations\move\w\130px\11.png" />
-    <Content Include="Assets\Fox\Animations\move\w\130px\12.png" />
-    <Content Include="Assets\Fox\Animations\move\w\130px\2.png" />
-    <Content Include="Assets\Fox\Animations\move\w\130px\3.png" />
-    <Content Include="Assets\Fox\Animations\move\w\130px\4.png" />
-    <Content Include="Assets\Fox\Animations\move\w\130px\5.png" />
-    <Content Include="Assets\Fox\Animations\move\w\130px\6.png" />
-    <Content Include="Assets\Fox\Animations\move\w\130px\7.png" />
-    <Content Include="Assets\Fox\Animations\move\w\130px\8.png" />
-    <Content Include="Assets\Fox\Animations\move\w\130px\9.png" />
-    <Content Include="Assets\Fox\Animations\move\w\64px\1.png" />
-    <Content Include="Assets\Fox\Animations\move\w\64px\10.png" />
-    <Content Include="Assets\Fox\Animations\move\w\64px\11.png" />
-    <Content Include="Assets\Fox\Animations\move\w\64px\12.png" />
-    <Content Include="Assets\Fox\Animations\move\w\64px\2.png" />
-    <Content Include="Assets\Fox\Animations\move\w\64px\3.png" />
-    <Content Include="Assets\Fox\Animations\move\w\64px\4.png" />
-    <Content Include="Assets\Fox\Animations\move\w\64px\5.png" />
-    <Content Include="Assets\Fox\Animations\move\w\64px\6.png" />
-    <Content Include="Assets\Fox\Animations\move\w\64px\7.png" />
-    <Content Include="Assets\Fox\Animations\move\w\64px\8.png" />
-    <Content Include="Assets\Fox\Animations\move\w\64px\9.png" />
-    <Content Include="Assets\Fox\Animations\move\w\Fox_Walk_dir2.png" />
-    <Content Include="Assets\Fox\frame-grid-130px.png" />
-    <Content Include="Assets\Fox\Reference\Fox_Idle_dir1.png" />
-    <Content Include="Assets\Fox\Reference\Fox_Idle_dir2.png" />
-    <Content Include="Assets\Fox\Reference\Fox_Idle_dir3.png" />
-    <Content Include="Assets\Fox\Reference\Fox_Idle_dir4.png" />
-    <Content Include="Assets\Fox\Reference\Fox_Idle_dir5.png" />
-    <Content Include="Assets\Fox\Reference\Fox_Idle_dir6.png" />
-    <Content Include="Assets\Fox\Reference\Fox_Idle_dir7.png" />
-    <Content Include="Assets\Fox\Reference\Fox_Plain_Idle_dir1.png" />
-    <Content Include="Assets\Fox\Reference\Fox_Plain_Idle_dir2.png" />
-    <Content Include="Assets\Fox\Reference\Fox_Plain_Idle_dir3.png" />
-    <Content Include="Assets\Fox\Reference\Fox_Plain_Idle_dir4.png" />
-    <Content Include="Assets\Fox\Reference\Fox_Plain_Idle_dir5.png" />
-    <Content Include="Assets\Fox\Reference\Fox_Plain_Idle_dir6.png" />
-    <Content Include="Assets\Fox\Reference\Fox_Plain_Idle_dir7.png" />
-    <Content Include="Assets\Fox\Reference\Fox_Plain_Idle_dir8.png" />
-    <Content Include="Assets\Fox\Reference\Fox_Plain_Walk_dir1.png" />
-    <Content Include="Assets\Fox\Reference\Fox_Plain_Walk_dir2.png" />
-    <Content Include="Assets\Fox\Reference\Fox_Plain_Walk_dir3.png" />
-    <Content Include="Assets\Fox\Reference\Fox_Plain_Walk_dir4.png" />
-    <Content Include="Assets\Fox\Reference\Fox_Plain_Walk_dir5.png" />
-    <Content Include="Assets\Fox\Reference\Fox_Plain_Walk_dir6.png" />
-    <Content Include="Assets\Fox\Reference\Fox_Plain_Walk_dir7.png" />
-    <Content Include="Assets\Fox\Reference\Fox_Plain_Walk_dir8.png" />
+    <Content Include="Assets\Tosha\Animations\blink\1.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Tosha\Animations\blink\2.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Tosha\Animations\blink\3.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Tosha\Animations\blink\4.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Tosha\Animations\blink\5.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Tosha\Animations\dragging-sleep\1.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Tosha\Animations\dragging-sleep\2.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Tosha\Animations\dragging-sleep\3.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Tosha\Animations\dragging-sleep\4.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Tosha\Animations\dragging\1.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Tosha\Animations\hisses\1.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Tosha\Animations\hisses\2.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Tosha\Animations\hisses\3.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Tosha\Animations\hisses\4.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Tosha\Animations\hisses\5.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Tosha\Animations\hisses\6.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Tosha\Animations\hisses\7.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Tosha\Animations\hisses\8.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Tosha\Animations\hisses\9.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Tosha\Animations\idle\1.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Tosha\Animations\laydown\1.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Tosha\Animations\laydown\2.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Tosha\Animations\laydown\3.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Tosha\Animations\laydown\4.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Tosha\Animations\laydown\5.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Tosha\Animations\laydown\6.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Tosha\Animations\laydown\7.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Tosha\Animations\laydown\8.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Tosha\Animations\laydown\9.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Tosha\Animations\look-around\1.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Tosha\Animations\look-around\2.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Tosha\Animations\look-around\3.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Tosha\Animations\look-around\4.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Tosha\Animations\look-around\5.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Tosha\Animations\look-around\6.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Tosha\Animations\look-around\7.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Tosha\Animations\look-around\8.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Tosha\Animations\meow\1.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Tosha\Animations\meow\2.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Tosha\Animations\meow\3.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Tosha\Animations\meow\4.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Tosha\Animations\meow\5.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Tosha\Animations\run\nw\1.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Tosha\Animations\run\nw\2.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Tosha\Animations\run\nw\3.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Tosha\Animations\run\nw\4.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Tosha\Animations\run\nw\5.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Tosha\Animations\run\nw\6.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Tosha\Animations\run\nw\7.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Tosha\Animations\run\nw\8.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Tosha\Animations\run\n\1.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Tosha\Animations\run\n\2.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Tosha\Animations\run\n\3.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Tosha\Animations\run\n\4.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Tosha\Animations\run\n\5.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Tosha\Animations\run\n\6.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Tosha\Animations\run\n\7.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Tosha\Animations\run\n\8.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Tosha\Animations\run\sw\1.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Tosha\Animations\run\sw\2.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Tosha\Animations\run\sw\3.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Tosha\Animations\run\sw\4.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Tosha\Animations\run\sw\5.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Tosha\Animations\run\sw\6.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Tosha\Animations\run\sw\7.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Tosha\Animations\run\sw\8.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Tosha\Animations\run\s\1.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Tosha\Animations\run\s\2.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Tosha\Animations\run\s\3.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Tosha\Animations\run\s\4.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Tosha\Animations\run\s\5.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Tosha\Animations\run\s\6.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Tosha\Animations\run\s\7.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Tosha\Animations\run\s\8.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Tosha\Animations\run\w\1.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Tosha\Animations\run\w\2.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Tosha\Animations\run\w\3.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Tosha\Animations\run\w\4.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Tosha\Animations\run\w\5.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Tosha\Animations\run\w\6.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Tosha\Animations\run\w\7.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Tosha\Animations\run\w\8.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Tosha\Animations\sleep\1.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Tosha\Animations\sleep\2.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Tosha\Animations\sleep\3.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Tosha\Animations\sleep\4.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Tosha\Animations\standup\1.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Tosha\Animations\standup\2.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Tosha\Animations\standup\3.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Tosha\Animations\standup\4.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Tosha\Animations\standup\5.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Tosha\Animations\standup\6.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Tosha\Animations\standup\7.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Tosha\Animations\standup\8.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Tosha\Animations\standup\9.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Tosha\Animations\walk\nw\1.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Tosha\Animations\walk\nw\2.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Tosha\Animations\walk\nw\3.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Tosha\Animations\walk\nw\4.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Tosha\Animations\walk\n\1.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Tosha\Animations\walk\n\2.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Tosha\Animations\walk\n\3.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Tosha\Animations\walk\n\4.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Tosha\Animations\walk\sw\1.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Tosha\Animations\walk\sw\2.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Tosha\Animations\walk\sw\3.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Tosha\Animations\walk\sw\4.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Tosha\Animations\walk\s\1.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Tosha\Animations\walk\s\2.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Tosha\Animations\walk\s\3.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Tosha\Animations\walk\s\4.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Tosha\Animations\walk\w\1.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Tosha\Animations\walk\w\2.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Tosha\Animations\walk\w\3.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Tosha\Animations\walk\w\4.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Tosha\Sounds\hisses.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Tosha\Sounds\meow.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Tosha\Sounds\purring.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Koshenya.ico" />
   </ItemGroup>
   <ItemGroup>

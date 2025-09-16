@@ -33,6 +33,8 @@
             System.Windows.Forms.Button browseButton;
             System.Windows.Forms.Label label6;
             System.Windows.Forms.Label label7;
+            System.Windows.Forms.Button addAllbutton;
+            System.Windows.Forms.Button clearAllButton;
             this.playButton = new System.Windows.Forms.Button();
             this.sourceTextBox = new System.Windows.Forms.TextBox();
             this.listBox = new System.Windows.Forms.ListBox();
@@ -42,23 +44,15 @@
             browseButton = new System.Windows.Forms.Button();
             label6 = new System.Windows.Forms.Label();
             label7 = new System.Windows.Forms.Label();
+            addAllbutton = new System.Windows.Forms.Button();
+            clearAllButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
-            // 
-            // playButton
-            // 
-            this.playButton.Location = new System.Drawing.Point(157, 117);
-            this.playButton.Name = "playButton";
-            this.playButton.Size = new System.Drawing.Size(63, 23);
-            this.playButton.TabIndex = 6;
-            this.playButton.Text = "Play";
-            this.playButton.UseVisualStyleBackColor = true;
-            this.playButton.Click += new System.EventHandler(this.PlayButton_Click);
             // 
             // removeButton
             // 
-            removeButton.Location = new System.Drawing.Point(226, 117);
+            removeButton.Location = new System.Drawing.Point(220, 117);
             removeButton.Name = "removeButton";
-            removeButton.Size = new System.Drawing.Size(63, 23);
+            removeButton.Size = new System.Drawing.Size(54, 23);
             removeButton.TabIndex = 7;
             removeButton.Text = "Remove";
             removeButton.UseVisualStyleBackColor = true;
@@ -66,9 +60,9 @@
             // 
             // addButton
             // 
-            addButton.Location = new System.Drawing.Point(88, 117);
+            addButton.Location = new System.Drawing.Point(37, 117);
             addButton.Name = "addButton";
-            addButton.Size = new System.Drawing.Size(63, 23);
+            addButton.Size = new System.Drawing.Size(54, 23);
             addButton.TabIndex = 5;
             addButton.Text = "Add";
             addButton.UseVisualStyleBackColor = true;
@@ -102,6 +96,16 @@
             label7.TabIndex = 46;
             label7.Text = "Name:";
             // 
+            // playButton
+            // 
+            this.playButton.Location = new System.Drawing.Point(159, 117);
+            this.playButton.Name = "playButton";
+            this.playButton.Size = new System.Drawing.Size(54, 23);
+            this.playButton.TabIndex = 6;
+            this.playButton.Text = "Play";
+            this.playButton.UseVisualStyleBackColor = true;
+            this.playButton.Click += new System.EventHandler(this.PlayButton_Click);
+            // 
             // sourceTextBox
             // 
             this.sourceTextBox.Location = new System.Drawing.Point(3, 216);
@@ -125,10 +129,32 @@
             this.nameTextBox.Size = new System.Drawing.Size(200, 20);
             this.nameTextBox.TabIndex = 2;
             // 
+            // addAllbutton
+            // 
+            addAllbutton.Location = new System.Drawing.Point(98, 117);
+            addAllbutton.Name = "addAllbutton";
+            addAllbutton.Size = new System.Drawing.Size(54, 23);
+            addAllbutton.TabIndex = 49;
+            addAllbutton.Text = "Add All";
+            addAllbutton.UseVisualStyleBackColor = true;
+            addAllbutton.Click += new System.EventHandler(this.AddAllbutton_Click);
+            // 
+            // clearAllButton
+            // 
+            clearAllButton.Location = new System.Drawing.Point(281, 117);
+            clearAllButton.Name = "clearAllButton";
+            clearAllButton.Size = new System.Drawing.Size(54, 23);
+            clearAllButton.TabIndex = 50;
+            clearAllButton.Text = "Clear All";
+            clearAllButton.UseVisualStyleBackColor = true;
+            clearAllButton.Click += new System.EventHandler(this.ClearAllButton_Click);
+            // 
             // SoundsListViewUC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(clearAllButton);
+            this.Controls.Add(addAllbutton);
             this.Controls.Add(this.playButton);
             this.Controls.Add(removeButton);
             this.Controls.Add(this.sourceTextBox);

@@ -80,13 +80,14 @@ namespace Koshenya.Forms
             try
             {
                 CharacterConfiguration.Save(config, answer);
+                DialogResult = DialogResult.OK;
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                DialogResult = DialogResult.Abort;
             }
 
-            DialogResult = DialogResult.OK;
             Close();
         }
 

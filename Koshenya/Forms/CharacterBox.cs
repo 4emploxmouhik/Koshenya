@@ -137,6 +137,8 @@ namespace Koshenya.Forms
             {
                 if (form.ShowDialog() == DialogResult.OK)
                     MessageBox.Show("New character configuration saved.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                else if (form.DialogResult == DialogResult.Abort)
+                    MessageBox.Show("Saving new character configuration interrupted.", "Something goes wrong", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
             _character.Start();

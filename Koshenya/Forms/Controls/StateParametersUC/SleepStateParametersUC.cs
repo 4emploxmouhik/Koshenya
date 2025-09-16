@@ -92,7 +92,7 @@ namespace Koshenya.Forms.Controls.StateParametersUC
         {
             int time = (int)numericUpDown.Value;
 
-            switch (comboBox5.SelectedIndex)
+            switch (timeUnitComboBox.SelectedIndex)
             {
                 case 1: time *= 1000; break;
                 case 2: time *= 60000; break;

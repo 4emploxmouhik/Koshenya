@@ -42,7 +42,7 @@
             System.Windows.Forms.Button button1;
             this.awakenAnimsListBox = new System.Windows.Forms.ListBox();
             this.animsComboBox3 = new System.Windows.Forms.ComboBox();
-            this.comboBox5 = new System.Windows.Forms.ComboBox();
+            this.timeUnitComboBox = new System.Windows.Forms.ComboBox();
             this.numericUpDown = new System.Windows.Forms.NumericUpDown();
             this.soundsComboBox = new System.Windows.Forms.ComboBox();
             this.animsComboBox2 = new System.Windows.Forms.ComboBox();
@@ -142,7 +142,7 @@
             // 
             // groupBox4
             // 
-            groupBox4.Controls.Add(this.comboBox5);
+            groupBox4.Controls.Add(this.timeUnitComboBox);
             groupBox4.Controls.Add(this.numericUpDown);
             groupBox4.Location = new System.Drawing.Point(224, 19);
             groupBox4.Name = "groupBox4";
@@ -151,17 +151,18 @@
             groupBox4.TabStop = false;
             groupBox4.Text = "Sleep time";
             // 
-            // comboBox5
+            // timeUnitComboBox
             // 
-            this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.Items.AddRange(new object[] {
+            this.timeUnitComboBox.FormattingEnabled = true;
+            this.timeUnitComboBox.Items.AddRange(new object[] {
             "ms",
             "sec",
             "min"});
-            this.comboBox5.Location = new System.Drawing.Point(69, 18);
-            this.comboBox5.Name = "comboBox5";
-            this.comboBox5.Size = new System.Drawing.Size(41, 21);
-            this.comboBox5.TabIndex = 30;
+            this.timeUnitComboBox.SelectedIndex = 0;
+            this.timeUnitComboBox.Location = new System.Drawing.Point(69, 18);
+            this.timeUnitComboBox.Name = "timeUnitComboBox";
+            this.timeUnitComboBox.Size = new System.Drawing.Size(41, 21);
+            this.timeUnitComboBox.TabIndex = 30;
             // 
             // numericUpDown
             // 
@@ -300,6 +301,6 @@
         private System.Windows.Forms.ComboBox animsComboBox2;
         private System.Windows.Forms.ListBox fallAsleepAnimsListBox;
         private System.Windows.Forms.ComboBox animsComboBox1;
-        private System.Windows.Forms.ComboBox comboBox5;
+        private System.Windows.Forms.ComboBox timeUnitComboBox;
     }
 }

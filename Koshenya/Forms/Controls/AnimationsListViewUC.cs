@@ -54,8 +54,54 @@ namespace Koshenya.Forms.Controls
                 IsReverse = reverseCheckBox.Checked,
                 IsReflected = reflectedCheckBox.Checked
             });
-
             listBox.Items.Add(nameTextBox.Text);
+        }
+
+        private void AddAllButton_Click(object sender, EventArgs e)
+        {
+            using (var dialog = new FolderBrowserDialog())
+            {
+                if (dialog.ShowDialog() == DialogResult.OK)
+                {
+                    DirectoryInfo animationsDirectory = new DirectoryInfo(dialog.SelectedPath);
+                    int lvl = 0;
+
+                    foreach (var directory in animationsDirectory.GetDirectories())
+                        FillAnimationsList(directory, ref lvl);
+                }
+            }
+        }
+
+        private void FillAnimationsList(DirectoryInfo directory, ref int lvl)
+        {
+            DirectoryInfo[] childs = directory.GetDirectories();
+
+            if (childs.Length == 0)
+            {
+                string name = lvl == 0 ? directory.Name : $"{directory.Parent}-{directory.Name}";
+                string source = directory.FullName;
+
+                Animations.Add(new CharacterConfiguration.Animation()
+                {
+                    Name = name,
+                    Source = source,
+                    FrameRate = 24,
+                    IsReverse = false,
+                    IsReflected = false
+                });
+                listBox.Items.Add(name);
+
+                if (lvl > 0)
+                    lvl--;
+            }
+            else
+            {
+                foreach (var child in childs)
+                {
+                    lvl++;
+                    FillAnimationsList(child, ref lvl);
+                }
+            }
         }
 
         private void EditButton_Click(object sender, EventArgs e)
@@ -138,8 +184,22 @@ namespace Koshenya.Forms.Controls
 
             var selectedAnimation = Animations.First(x => x.Name == listBox.Items[listBox.SelectedIndex].ToString());
             Animations.Remove(selectedAnimation);
-
             listBox.Items.RemoveAt(listBox.SelectedIndex);
+        }
+
+        private void ClearAllButton_Click(object sender, EventArgs e)
+        {
+            Animations.Clear();
+            listBox.Items.Clear();
+            nameTextBox.Clear();
+            sourceTextBox.Clear();
+            fpsNumericUpDown.Value = 24;
+            reverseCheckBox.Checked = false;
+            reflectedCheckBox.Checked = false;
+            _player.Stop();
+            _isAnimationPlayed = false;
+            playButton.Text = "Play";
+            Frame = null;
         }
 
         private void BrowseButton_Click(object sender, EventArgs e)

@@ -176,6 +176,7 @@ namespace Koshenya.Forms.Controls.StateParametersUC
             "ms",
             "sec",
             "min"});
+            this.timeUnitComboBox.SelectedIndex = 0;
             this.timeUnitComboBox.Location = new System.Drawing.Point(300, 116);
             this.timeUnitComboBox.Name = "timeUnitComboBox";
             this.timeUnitComboBox.Size = new System.Drawing.Size(41, 21);
